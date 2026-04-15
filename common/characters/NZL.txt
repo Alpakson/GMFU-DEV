@@ -453,25 +453,6 @@ characters={
 			}
 		}
 	}
-
-	NZL_bernard_ashwin = { # R56
-		name="Bernard Ashwin"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = NZL_bernard_ashwin
-			allowed = {	
-				original_tag = NZL
-			}
-			traits = {
-				economist
-			}
-		}
-	}
 		NZL_john_a_lee = { # R56
 		name=NZL_john_a_lee
 		portraits={
