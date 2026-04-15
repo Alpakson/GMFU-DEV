@@ -969,7 +969,7 @@ leader_traits = {
 		cost = 1000
 		
 		field_marshal_modifier = {
-			supply_consumption_factor = -0.20
+			supply_consumption_factor = -0.15
 		}
 		ai_will_do = {
 			factor = 1
@@ -1031,7 +1031,7 @@ leader_traits = {
 		}
 		cost = 1000
 		field_marshal_modifier = {
-			planning_speed = 0.30
+			planning_speed = 0.4
 		}
 		
 		slot = army_chief
@@ -1056,7 +1056,7 @@ leader_traits = {
 		}
 		cost = 1000
 		field_marshal_modifier = {
-			max_planning = 0.15
+			max_planning = 0.1
 		}
 		
 		slot = army_chief
@@ -1380,7 +1380,7 @@ leader_traits = {
 		
 		cost = 500
 		modifier = {
-			planning_speed = 0.2
+			planning_speed = 0.1
 		}
 		# non_shared_modifier = {
 		# 	experience_gain_factor = -0.1

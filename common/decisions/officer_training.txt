@@ -511,151 +511,151 @@ officer_training = {
 		}
 	}
 
-	officer_bold_attack = {
-
-		icon = ger_military_buildup
-
-		available = {
-			has_idea = bold_attack_spirit
-			NOT = { has_country_flag = officer_training_flag }
-			any_army_leader = {
-				attack_skill_level < 3
-			}
-		}
-		
-		custom_cost_trigger = {
-			command_power > 34
-		}
-		custom_cost_text = decision_cost_CP_35
-		
-		days_remove = 365
-		
-		days_re_enable = 60
-
-		visible = {
-			has_idea = bold_attack_spirit					
-		}
-
-		complete_effect = {
-			set_country_flag = officer_training_flag
-			hidden_effect = {
-				add_command_power = -35
-			}
-			if = {
-				limit = {
-					any_army_leader = {
-						has_trait = command_school
-						attack_skill_level < 3
-					}
-				}
-				random_army_leader = {
-					limit = {
-						has_trait = command_school
-						attack_skill_level < 3
-					}
-					set_character_flag = officer_bold_attack_flag
-				}
-			} else = {
-				random_army_leader = {
-					limit = {
-						attack_skill_level < 3
-					}
-					set_character_flag = officer_bold_attack_flag
-				}
-			}
-			custom_effect_tooltip = off_bold_tt
-		}
-
-		remove_effect = {
-			random_army_leader = {
-				limit = {
-					has_character_flag = officer_bold_attack_flag
-				}
-				if = {
-					limit = {
-						has_trait = command_school
-					}
-					remove_unit_leader_trait = command_school
-				}
-				add_attack = 1
-				clr_character_flag = officer_bold_attack_flag
-			}
-			clr_country_flag = officer_training_flag
-		}
-	}
-
-	officer_tenacious_defense = {
-
-		icon = ger_military_buildup
-
-		available = {
-			has_idea = tenacious_defense_spirit
-			NOT = { has_country_flag = officer_training_flag }
-			any_army_leader = {
-				defense_skill_level < 3
-			}
-		}
-		
-		custom_cost_trigger = {
-			command_power > 34
-		}
-		custom_cost_text = decision_cost_CP_35
-		
-		days_remove = 365
-		
-		days_re_enable = 60
-
-		visible = {
-			has_idea = tenacious_defense_spirit					
-		}
-
-		complete_effect = {
-			set_country_flag = officer_training_flag
-			hidden_effect = {
-				add_command_power = -35
-			}
-			if = {
-				limit = {
-					any_army_leader = {
-						has_trait = command_school
-						defense_skill_level < 3
-					}
-				}
-				random_army_leader = {
-					limit = {
-						has_trait = command_school
-						defense_skill_level < 3
-					}
-					set_character_flag = officer_tenacious_defense_flag
-				}
-			} else = {
-				random_army_leader = {
-					limit = {
-						defense_skill_level < 3
-					}
-					set_character_flag = officer_tenacious_defense_flag
-				}
-			}
-			custom_effect_tooltip = off_tenacious_tt
-		}
-
-		remove_effect = {
-			random_army_leader = {
-				limit = {
-					has_character_flag = officer_tenacious_defense_flag
-				}
-				if = {
-					limit = {
-						has_trait = command_school
-					}
-					remove_unit_leader_trait = command_school
-				}
-				add_defense = 1
-				clr_character_flag = officer_tenacious_defense_flag
-			}
-			clr_country_flag = officer_training_flag
-		}
-	}
+	#officer_bold_attack = {
+	#
+	#	icon = ger_military_buildup
+	#
+	#	available = {
+	#		has_idea = bold_attack_spirit
+	#		NOT = { has_country_flag = officer_training_flag }
+	#		any_army_leader = {
+	#			attack_skill_level < 3
+	#		}
+	#	}
+	#	
+	#	custom_cost_trigger = {
+	#		command_power > 34
+	#	}
+	#	custom_cost_text = decision_cost_CP_35
+	#	
+	#	days_remove = 365
+	#	
+	#	days_re_enable = 60
+	#
+	#	visible = {
+	#		has_idea = bold_attack_spirit					
+	#	}
+	#
+	#	complete_effect = {
+	#		set_country_flag = officer_training_flag
+	#		hidden_effect = {
+	#			add_command_power = -35
+	#		}
+	#		if = {
+	#			limit = {
+	#				any_army_leader = {
+	#					has_trait = command_school
+	#					attack_skill_level < 3
+	#				}
+	#			}
+	#			random_army_leader = {
+	#				limit = {
+	#					has_trait = command_school
+	#					attack_skill_level < 3
+	#				}
+	#				set_character_flag = officer_bold_attack_flag
+	#			}
+	#		} else = {
+	#			random_army_leader = {
+	#				limit = {
+	#					attack_skill_level < 3
+	#				}
+	#				set_character_flag = officer_bold_attack_flag
+	#			}
+	#		}
+	#		custom_effect_tooltip = off_bold_tt
+	#	}
+	#
+	#	remove_effect = {
+	#		random_army_leader = {
+	#			limit = {
+	#				has_character_flag = officer_bold_attack_flag
+	#			}
+	#			if = {
+	#				limit = {
+	#					has_trait = command_school
+	#				}
+	#				remove_unit_leader_trait = command_school
+	#			}
+	#			add_attack = 1
+	#			clr_character_flag = officer_bold_attack_flag
+	#		}
+	#		clr_country_flag = officer_training_flag
+	#	}
+	#}
+	#
+	#officer_tenacious_defense = {
+	#
+	#	icon = ger_military_buildup
+	#
+	#	available = {
+	#		has_idea = tenacious_defense_spirit
+	#		NOT = { has_country_flag = officer_training_flag }
+	#		any_army_leader = {
+	#			defense_skill_level < 3
+	#		}
+	#	}
+	#	
+	#	custom_cost_trigger = {
+	#		command_power > 34
+	#	}
+	#	custom_cost_text = decision_cost_CP_35
+	#	
+	#	days_remove = 365
+	#	
+	#	days_re_enable = 60
+	#
+	#	visible = {
+	#		has_idea = tenacious_defense_spirit					
+	#	}
+	#
+	#	complete_effect = {
+	#		set_country_flag = officer_training_flag
+	#		hidden_effect = {
+	#			add_command_power = -35
+	#		}
+	#		if = {
+	#			limit = {
+	#				any_army_leader = {
+	#					has_trait = command_school
+	#					defense_skill_level < 3
+	#				}
+	#			}
+	#			random_army_leader = {
+	#				limit = {
+	#					has_trait = command_school
+	#					defense_skill_level < 3
+	#				}
+	#				set_character_flag = officer_tenacious_defense_flag
+	#			}
+	#		} else = {
+	#			random_army_leader = {
+	#				limit = {
+	#					defense_skill_level < 3
+	#				}
+	#				set_character_flag = officer_tenacious_defense_flag
+	#			}
+	#		}
+	#		custom_effect_tooltip = off_tenacious_tt
+	#	}
+	#
+	#	remove_effect = {
+	#		random_army_leader = {
+	#			limit = {
+	#				has_character_flag = officer_tenacious_defense_flag
+	#			}
+	#			if = {
+	#				limit = {
+	#					has_trait = command_school
+	#				}
+	#				remove_unit_leader_trait = command_school
+	#			}
+	#			add_defense = 1
+	#			clr_character_flag = officer_tenacious_defense_flag
+	#		}
+	#		clr_country_flag = officer_training_flag
+	#	}
+	#}
 
 	officer_meticulous_preparation = {
 
@@ -691,21 +691,16 @@ officer_training = {
 				limit = {
 					any_army_leader = {
 						has_trait = command_school
-						planning_skill_level < 3
 					}
 				}
 				random_army_leader = {
 					limit = {
 						has_trait = command_school
-						planning_skill_level < 3
 					}
 					set_character_flag = officer_meticulous_preparation_flag
 				}
 			} else = {
 				random_army_leader = {
-					limit = {
-						planning_skill_level < 3
-					}
 					if = {
 						limit = {
 							has_trait = command_school
@@ -729,7 +724,6 @@ officer_training = {
 					}
 					remove_unit_leader_trait = command_school
 				}
-				add_planning = 1
 				add_unit_leader_trait = organizer
 				clr_character_flag = officer_meticulous_preparation_flag
 			}
