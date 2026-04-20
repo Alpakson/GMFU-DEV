@@ -5123,23 +5123,6 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			if = {
-				limit = {
-					ENG = { has_government = democratic }
-				}
-				effect_tooltip = {
-					290 = {
-						add_extra_state_shared_building_slots = 5
-						add_building_construction = {
-							type = industrial_complex
-							level = 5
-							instant_build = yes
-						}
-					}
-				}
-				custom_effect_tooltip = SPA_the_tangiers_enclave_tt
-			}
-			else = {
 				290 = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
@@ -5149,7 +5132,6 @@ focus_tree = {
 					}
 				}
 			}
-		}
 	}
 
 	focus = {
@@ -13831,6 +13813,10 @@ focus_tree = {
 					idea = SPR_Bozo_Spain_Build
 					days = 730
 				}
+			}
+			SOV = {
+				add_offsite_building = { type = arms_factory level = 15 }
+				army_experience = 50
 			}
         custom_effect_tooltip = Allies_Victory_focus_1
 		}
