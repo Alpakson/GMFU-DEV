@@ -62,41 +62,22 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 
         completion_reward = {
-            IF = {
-                limit = {
-                    NOT = {
-                        has_completed_focus = RAJ_look_to_the_past
-                    }
-                }
-                every_army_leader = {
-                    limit = {
-                        has_trait = loyalty_to_india
-                    }
-                    add_skill_level = 1
-                    random_list = {
-                        seed = random 
-                        25 = {
-                            add_planning = 1
-                            add_attack = 1
-                        }
-                        25 = {
-                            add_logistics = 1
-                            add_attack = 1
-                        }
-                        25 = {
-                            add_planning = 1
-                            add_defense = 1
-                        }
-                        25 = {
-                            add_logistics = 1
-                            add_defense = 1
-                        }
-                    }
-                }
-            }
-            ELSE = {
-                army_experience = 50
-            }
+			every_army_leader = {
+				limit = {
+					has_trait = loyalty_to_india
+				}
+				add_skill_level = 1
+			}
+            
+			
+			
+			
+			country_event = {
+                id = GOE_RAJ_generals.10
+                hours = 1
+            } 
+			
+			custom_effect_tooltip = GOE_RAJ_generals.10.description
         }
     }
 
@@ -7815,7 +7796,15 @@ focus_tree = {
             add_to_variable = { RAJ_resistance_activity_independence_movement = 0.05 tooltip =  resistance_activity_tt }
             add_to_variable = { RAJ_resistance_target_independence_movement = 0.05 tooltip =  resistance_target_tt }
             custom_effect_tooltip = generic_skip_one_line_tt
-            try_build_civ_in_core_otherwise_build_in_controlled = yes
+            #try_build_civ_in_core_otherwise_build_in_controlled = yes
+			429 ={
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
             
         }
     }
@@ -7925,7 +7914,14 @@ focus_tree = {
                 value = 0.03
                 localization = RAJ_khadi_movement
             }
-            try_build_civ_in_core_otherwise_build_in_controlled = yes
+            429 ={
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
         }
     }
 
@@ -8508,7 +8504,14 @@ focus_tree = {
                 value = 0.05 
                 localization = RAJ_cottage_industries
             }
-            try_build_civ_in_core_otherwise_build_in_controlled_2_civs = yes
+            435 ={
+                add_extra_state_shared_building_slots = 4
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 4
+                    instant_build = yes
+                }
+            }
         }
     }
 
@@ -8771,7 +8774,14 @@ focus_tree = {
                 localization = RAJ_handloom_weaving
             }
 
-            try_build_civ_in_core_otherwise_build_in_controlled = yes
+            439 ={
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
             add_tech_bonus = {
                 name = RAJ_handloom_weaving
                 bonus = 0.25
@@ -21404,7 +21414,7 @@ focus_tree = {
         y = 0
         relative_position_id = RAJ_bombay_baroda_and_central_india_railway
         
-        cost = 7
+        cost = 6
 
         ai_will_do = {
             factor = 1

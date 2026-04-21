@@ -4695,3 +4695,57 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = GOE_RAJ_generals.10
+	title = GOE_RAJ_generals.10.t	
+	desc = GOE_RAJ_generals.10.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+
+
+	option = { 
+		name = GOE_RAJ_generals.10.a
+		every_army_leader = {
+			limit = {
+                has_trait = loyalty_to_india
+            }
+            add_planning = 1
+            add_attack = 1     
+        }
+	}
+	
+	option = { 
+		name = GOE_RAJ_generals.10.b
+		every_army_leader = {
+			limit = {
+                has_trait = loyalty_to_india
+            }
+            add_logistics = 1
+			add_attack = 1    
+        }
+	}
+	
+	option = { 
+		name = GOE_RAJ_generals.10.c
+		every_army_leader = {
+			limit = {
+                has_trait = loyalty_to_india
+            }
+            add_planning = 1
+			add_defense = 1     
+        }
+	}
+	
+	option = { 
+		name = GOE_RAJ_generals.10.d
+		every_army_leader = {
+			limit = {
+                has_trait = loyalty_to_india
+            }
+            add_logistics = 1
+			add_defense = 1     
+        }
+	}
+
+}
