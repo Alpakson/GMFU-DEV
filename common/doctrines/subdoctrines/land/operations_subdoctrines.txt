@@ -157,8 +157,9 @@ last_stand = {
         }
         breaking_out = {
         #5
-            cas_damage_reduction = 0.15
-            army_core_attack_factor = 0.05
+            category_army = {
+                soft_attack = 0.08
+            }
         }
     }
 }
@@ -363,7 +364,7 @@ grand_assault = {
         multiple_attack_directions = {
         #2
             category_army = {
-                breakthrough = 0.075
+                breakthrough = 0.1
             }
         }
         combined_arms_integration = {
@@ -511,7 +512,6 @@ deep_battle = {
                max_organisation = 3
             }
             land_reinforce_rate = 0.05
-            cas_damage_reduction = 0.1
         }
         maskirovka = {
         #3
@@ -554,9 +554,6 @@ deep_battle = {
                    max_organisation = 3
                     add = yes
                 }
-            }
-            category_army = {
-                breakthrough = 0.05
             }
         }
     }
@@ -791,19 +788,19 @@ guerilla_war = {
     enable_tactic = tactic_guerrilla_tactics
     irregular_infantry = {
         soft_attack = 0.03
-        defense = 0.05
+        defense = 0.1
     }
     militia = {
         soft_attack = 0.03
-        defense = 0.05
+        defense = 0.1
     }
     garrison = {
         soft_attack = 0.03
-        defense = 0.05
+        defense = 0.1
     }
     penal_battalion = {
         soft_attack = 0.03
-        defense = 0.05
+        defense = 0.1
     }
 
     rewards = {
@@ -887,7 +884,7 @@ guerilla_war = {
             stability_factor = 0.1
             party_popularity_stability_factor = 0.1
             category_army = {
-                defense = 0.1
+                defense = 0.05
             }
             
         }
@@ -1073,7 +1070,7 @@ expeditionary_warfare = {
             naval_invasion_penalty = -0.1
             naval_invasion_planning_bonus_speed = 0.15
             category_army = {
-                soft_attack = 0.06
+                soft_attack = 0.03
             }
         }
         shore_fire_control_parties = {
