@@ -186,15 +186,6 @@ ideas = {
 
 		}
 
-		SAF_army_xp_bonus = {
-      	  allowed = { always = yes }
-      	  visible = { always = yes }
-
-       	 modifier = {
-           	 army_experience_gain = 0.05
-        	}
-    	}
-
 		SAF_cheap_labor_1 = {
 			allowed = {
 				always = no
@@ -533,7 +524,7 @@ ideas = {
 			modifier = {
 				army_speed_factor = 0.05
 			}
-
+		}
 		SAF_scw_veterans = {
 			allowed = {
 				always = no
@@ -658,79 +649,7 @@ ideas = {
 					soft_attack = 0.1
 					instant = yes
 				}
-			}
-		}
-	
-
-		SAF_joint_air_training_scheme = {
 			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				 is_in_faction_with = ENG
-			}
-
-			removal_cost = -1
-
-			picture = generic_air_bonus
-			
-			equipment_bonus = {
-				fighter_equipment = {
-					air_range = 0.1
-					air_attack = 0.05
-					instant = yes
-				}
-				cv_fighter_equipment = {
-					air_range = 0.1
-					air_attack = 0.05
-					instant = yes
-				}
-				CAS_equipment = {
-					air_range = 0.1
-					air_ground_attack = 0.05
-					instant = yes
-				}
-				cv_CAS_equipment = {
-					air_range = 0.1
-					air_ground_attack = 0.05
-					instant = yes
-				}
-				cv_nav_bomber_equipment = {
-					air_range = 0.1
-					naval_strike_attack = 0.05
-					instant = yes
-				}
-				nav_bomber_equipment = {
-					air_range = 0.1
-					naval_strike_attack = 0.05
-					instant = yes
-				}
-				tac_bomber_equipment = {
-					air_range = 0.1
-					air_ground_attack = 0.05
-					instant = yes
-				}
-				heavy_fighter_equipment = {
-					air_range = 0.1
-					air_attack = 0.05
-					instant = yes
-				}
-				strat_bomber_equipment = {
-					air_range = 0.1
-					air_bombing = 0.05
-					instant = yes
-				}
-				transport_plane_equipment = {
-					air_range = 0.1
-					instant = yes
-				}
-			}
-
-			modifier = {
-				air_ace_generation_chance_factor = 0.10
-			}
 		}
 	}
 
@@ -757,27 +676,6 @@ ideas = {
 			# 	}
 			# }
 			
-		cape_cope = {
-
-			picture = generic_tank_manufacturer_1
-
-			allowed = {
-				original_tag = SAF
-				
-			}
-
-			available = {
-	 			has_completed_focus = SAF_queen_of_the_desert
-			}
-
-			research_bonus = {
-					armor = 0.15
-			}
-
-			traits = {
-				cope_trait
-			}
-		}
 	}
 
 	
@@ -803,6 +701,7 @@ ideas = {
 			traits = { railway_company }
 			
 			modifier = {
+				railway_construction_speed = 0.15
 			}
 		}
 	}
