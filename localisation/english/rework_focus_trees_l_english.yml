@@ -216,6 +216,7 @@
  SAF_RWK_king_of_the_desert:0 "King Of The Desert"
  SAF_RWK_king_of_the_desert_desc:0 "Rework focus for South Africa."
 
+ #SAF_officer_train_tt:0 "§YThis focus will train the following Generals, depending on chosen path:§! \n - §0George Edward Bring §! will get §GInfantry Leader§! if the §Y'First SA Brigate'§! has been completed\n - §0Evered Poole §! will get §GCavalry Leader§! if the §Y'Lions Of The Desert'§! has been completed\n - §0Evered Poole §! will get §GPanzer Leader§! if the §Y'Armor Effort'§! has been completed"
 
 
  #CAPFOCUSSES
@@ -247,8 +248,8 @@
  SAF_RWK_retaking_saf_desc:0 "South Africa's government is in exile and is planning to retake the country from Axis control. This focus represents the first steps in that effort, including building up forces and securing support from allies."
  SAF_RWK_country_reinstated:0 "Country Reinstated"
  SAF_RWK_country_reinstated_desc:0 "South Africa's government has been reinstated after successfully retaking the country from Axis control. The focus now shifts to rebuilding the nation and its institutions after the turmoil of occupation and war."
- SAF_RWK_back_in_the_game:0 "Back In The Game"
- SAF_RWK_back_in_the_game_desc:0 "South Africa is back in the game after successfully retaking the country and reinstating its government. The focus now is on rebuilding the economy, military, and international standing after the disruptions of occupation and war."
+ SAF_RWK_help_from_allies:0 "Help From Allies"
+ SAF_RWK_help_from_allies_desc:0 "South Africa is receiving assistance from its allies to help rebuild the country and its military after the disruptions of occupation and war."
  SAF_RWK_payback_time:0 "Payback Time"
  SAF_RWK_payback_time_desc:0 "South Africa is seeking payback against the Axis powers for the occupation and turmoil they caused. This focus represents a shift towards a more aggressive posture, including military buildup and potential offensive operations to secure South Africa's interests and punish its enemies."
 
@@ -265,6 +266,14 @@
     SAF_sf_stats_desc:0 "South Africa's special forces have improved stats to reflect their elite training and capabilities, even as their overall numbers are limited by the special forces cap."
     SAF_retaking_homeland:0 "Retaking Homeland"
     SAF_retaking_homeland_desc:0 "South Africa's government is in exile and is planning to retake the country from Axis control. This idea represents the initial efforts to build up forces and secure support for that effort."
- 
+    SAF_sf_cap_flat:0 "Army Reorganization"
+    SAF_sf_cap_flat_desc:0 "South Africa's special forces cap is set to a flat level to reflect the limited manpower and resources available for elite units in the post-occupation period, regardless of other modifiers or reductions."
+
+    SAF_exiled:0 "South African Government In Exile"
+    SAF_IOG_the_government_in_exile_dynamic_desc:0 "South Africa's government is in exile after the occupation by Axis forces. This idea represents the ongoing efforts to maintain a functioning government and plan for the eventual retaking of the country."
+    SAF_exiled_2:0 "Rallying The Exiles"
+    SAF_IOG_the_government_in_exile_dynamic_desc_2:0 "South Africa's government is in exile after the occupation by Axis forces. This idea represents the ongoing efforts to maintain a functioning government and plan for the eventual retaking of the country, including securing support from allies and building up forces."
+    SAF_payback:0 "Payback Against The Axis"
+    SAF_IOG_the_government_in_exile_dynamic_desc_payback:0 "South Africa is seeking payback against the Axis powers for the occupation and turmoil they caused. This idea represents a shift towards a more aggressive posture, including military buildup and potential offensive operations to secure South Africa's interests and punish its enemies."
  #characters
     SAF_lion_king:0 "The Lion King"

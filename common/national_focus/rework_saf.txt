@@ -1302,106 +1302,16 @@
         search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = SAF_south_african_special_forces
-				bonus = 0.5
-				uses = 2
-				category = marine_tech
-				category = mountaineers_tech
-			}
-			if = {
-				limit = { has_dlc = "Arms Against Tyranny" }
-				add_doctrine_cost_reduction = {
-					cost_reduction = 0.5
-					uses = 2
-					category = special_forces_doctrine
-				}
-			}
+			add_ideas = SAF_sf_cap
 		}
 	}
-
 	focus = {
-		id = SAF_RWK_equipment_effort
-		icon = GFX_focus_generic_combined_arms
+		id = SAF_RWK_expand_the_south_african_artillery
+		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SAF_RWK_south_african_special_forces }
 		x = 0
 		y = 1
 		relative_position_id = SAF_RWK_south_african_special_forces
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-        search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {			
-			add_tech_bonus = {
-				name = SAF_equipment_effort
-				bonus = 0.5
-				uses = 1
-				category = support_tech
-			}
-		}
-	}
-
-	focus = {
-		id = SAF_RWK_heavy_AT_bonus
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = SAF_RWK_equipment_effort }
-		x = 1
-		y = 1
-		relative_position_id = SAF_RWK_equipment_effort
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-        search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {			
-			add_tech_bonus = {
-				name = SAF_modern_at_guns
-				bonus = 0.75
-				uses = 1
-				technology = heavy_antitank
-				technology = heavy_antitank2
-			}
-		}
-	}
-
-
-	focus = {
-		id = SAF_RWK_expand_the_south_african_artillery
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = SAF_RWK_equipment_effort }
-		x = -1
-		y = 1
-		relative_position_id = SAF_RWK_equipment_effort
 		
 		cost = 5
 
@@ -1431,6 +1341,83 @@
 			}
 		}
 	}
+	
+
+	focus = {
+		id = SAF_RWK_heavy_AT_bonus
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SAF_RWK_expand_the_south_african_artillery }
+		x = 1
+		y = 1
+		relative_position_id = SAF_RWK_expand_the_south_african_artillery
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+        search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {			
+			add_tech_bonus = {
+				name = SAF_modern_at_guns
+				bonus = 0.75
+				uses = 1
+				technology = heavy_antitank
+				technology = heavy_antitank2
+			}
+			add_ideas = SAF_heavy_anti_tank
+		}
+	}
+
+
+	focus = {
+		id = SAF_RWK_equipment_effort
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = SAF_RWK_expand_the_south_african_artillery }
+		x = -1
+		y = 1
+		relative_position_id = SAF_RWK_expand_the_south_african_artillery
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+        search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {			
+			add_tech_bonus = {
+				name = SAF_equipment_effort
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
 			
 	
 
@@ -1440,7 +1427,7 @@
 
 	focus = {
 		id = SAF_RWK_lions_of_the_desert
-		icon = GFX_goal_generic_army_motorized
+		icon = GFX_focus_FIN_motti_tactics
 		prerequisite = { focus = SAF_RWK_special_service_battalion }
 		mutually_exclusive = {
 			focus = SAF_RWK_first_sa_brigade
@@ -1484,7 +1471,7 @@
 
 	focus = {
 		id = SAF_RWK_cape_motor_divisions
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_generic_mechanized
 		prerequisite = { focus = SAF_RWK_lions_of_the_desert }
 		x = -1
 		y = 1
@@ -1516,7 +1503,8 @@
 				uses = 1
 				category = support_tech
 			}
-			recruit_character = SAF_lion_king
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = SAF_lion_king
 		}
 	}
 
@@ -1561,7 +1549,7 @@
 
 	focus = {
 		id = SAF_RWK_rocket_artillery_research
-		icon = GFX_focus_rocketry
+		icon = GFX_focus_SWE_let_fly_all_guns
 		prerequisite = { focus = SAF_RWK_motorized_infantry_workshops }
 		x = 0
 		y = 1
@@ -1600,7 +1588,7 @@
 
 	focus = {
 		id = SAF_RWK_desert_jackal_armoured_cars
-		icon = GFX_goal_generic_army_motorized
+		icon = GFX_focus_SWE_lynx_armored_car
 		prerequisite = { focus = SAF_RWK_lions_of_the_desert }
 		x = 1
 		y = 1
@@ -1815,7 +1803,7 @@
 
 	focus = {
 		id = SAF_RWK_king_of_the_desert
-		icon = GFX_goal_generic_build_tank
+		icon = GFX_focus_generic_tank_production
 		prerequisite = { focus = SAF_RWK_armor_effort }
 		x = -1
 		y = 1
@@ -1843,12 +1831,17 @@
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {			
+		completion_reward = {	
+			mio:SAF_iscor_organization = {
+				add_mio_size = 2
+				add_mio_funds = 1000
+			}		
 			add_tech_bonus = {
 				name = SAF_q_services_corps
 				bonus = 0.75
 				ahead_reduction = 0.5
-				uses = 1
+				uses = 2
+				technology = eng_medium_tank_2
 				technology = eng_medium_tank_4
 			}
 		}
@@ -1935,50 +1928,12 @@
 	}
 
 	focus = {
-		id = SAF_RWK_mobile_recon_tactics
-		icon = GFX_goal_generic_army_doctrines
+		id = SAF_RWK_mechanization_effort
+		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = SAF_RWK_anti_tank_guns }
 		x = 0
 		y = 1
 		relative_position_id = SAF_RWK_anti_tank_guns
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			army_experience = 10
-			add_doctrine_cost_reduction = {
-				name = SAF_mobile_recon_tactics
-				cost_reduction = 0.2
-				uses = 2
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SAF_RWK_mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = SAF_RWK_mobile_recon_tactics }
-		x = 0
-		y = 1
-		relative_position_id = SAF_RWK_mobile_recon_tactics
 
 		cost = 5
 
@@ -2012,7 +1967,24 @@
 	
 
 
-	
+#	focus = {
+#		id = SAF_officer_train
+#		icon = GFX_goal_generic_army_officers
+#		prerequisite = { focus = SAF_RWK_mechanization_effort focus = SAF_RWK_mk_3_recon_car focus = SAF_RWK_rocket_artillery_research focus = SAF_RWK_artillery_effort focus = SAF_RWK_heavy_AT_bonus focus = SAF_RWK_equipment_effort }
+#		x = -4
+#		y = 1.5
+#
+#		relative_position_id = SAF_RWK_mechanization_effort
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		cost = 5
+#		
+#		completion_reward = {
+#			custom_effect_tooltip = SAF_officer_train_tt
+#		}
+#	}
 
 	
 
@@ -2774,7 +2746,7 @@
 
 	focus = {
 		id = SAF_RWK_capitulated 
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_BRA_rio_protocol
 		x = 20
     	y = 8
 
@@ -2786,6 +2758,9 @@
 
     	completion_reward = {
       	  add_political_power = 100
+			add_stability = 0.05
+			add_war_support = 0.10
+			add_ideas = SAF_exiled
     	}
 	}
 
@@ -2804,13 +2779,13 @@
 		cost =7
 
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 10 }
+			add_offsite_building = { type = industrial_complex level = 5 }
 		}
 	}
 
 	focus = {
 		id = SAF_RWK_rebuilding_the_civillian_industry_2
-		icon = GFX_goal_generic_production
+		icon = GFX_focus_DEN_no_regulations
 		prerequisite = { focus = SAF_RWK_rebuilding_the_civillian_industry }
 		x = 0
 		y = 1
@@ -2821,7 +2796,7 @@
 		cost =7
 
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 10 }
+			add_offsite_building = { type = industrial_complex level = 5 }
 		}
 	}
 
@@ -2838,7 +2813,7 @@
 		cost =7
 
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 10 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -2855,7 +2830,7 @@
 		cost =7
 
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 10 }
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 
@@ -2863,7 +2838,7 @@
 
 	focus = {
 		id = SAF_RWK_reorganizing_the_army
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_NOR_broken_gun_policies
 		prerequisite = { focus = SAF_RWK_capitulated }
 		x = 0
 		y = 1
@@ -2874,13 +2849,15 @@
 		cost = 5
 
 		completion_reward = {
-			add_ideas = SAF_sf_cap
+			add_ideas = SAF_sf_cap_flat
+			add_manpower = 30000
+			army_experience = 50
 		}
 	}
 
 	focus = {
 		id = SAF_RWK_special_forces
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_PRC_controlled_growth
 		prerequisite = { focus = SAF_RWK_reorganizing_the_army }
 		
 		x = 0
@@ -2924,7 +2901,7 @@
 
 	focus = {
 		id = SAF_RWK_improve_special_forces
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_ARG_capitalize_the_beef_industry
 		prerequisite = { focus = SAF_RWK_improve_doctrine }
 		
 		x = 0
@@ -2945,7 +2922,7 @@
 
 	focus = {
 		id = SAF_RWK_copy_uk
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_PHI_marine_corps
 		prerequisite = { focus = SAF_RWK_special_forces }
 		x = 2
 		y = 1
@@ -2969,7 +2946,7 @@
 
 	focus = {
 		id = SAF_RWK_copy_germany
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_generic_paratrooper
 		prerequisite = { focus = SAF_RWK_special_forces }
 		x = -2
 		y = 1
@@ -2998,7 +2975,7 @@
 	# RETAKING SAF
 	focus = {
 		id = SAF_RWK_retaking_saf
-		icon = GFX_goal_generic_occupy_start_war
+		icon = GFX_focus_generic_africa_liberation
 		prerequisite = { focus = SAF_RWK_capitulated }
 		x = -4
 		y = 1
@@ -3012,34 +2989,60 @@
 		
 		completion_reward = {
 			add_political_power = 150
-			add_stability = 0.05
-			add_war_support = 0.05
 			add_ideas = SAF_retaking_homeland
+			add_ideas = SAF_exiled_2
 		}
 	}
+	
 
 	focus = {
 		id = SAF_RWK_country_reinstated 
-		icon = GFX_goal_generic_occupy_start_war
+		icon = GFX_focus_AUS_bring_phonix_insurance_from_the_ashes
 		prerequisite = { focus = SAF_RWK_retaking_saf }
 		x = 0
 		y = 1
 		relative_position_id = SAF_RWK_retaking_saf
 		
 		cost = 5
-		
+
 		ai_will_do = {
-			factor = 1
-		}	
-		
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = yes
+			720 = {
+				controller = {
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
+
 		completion_reward = {
-			
+			720 = { 
+				transfer_state_to = SAF 
+				add_core_of = SAF	
+				hidden_effect = {
+					add_extra_state_shared_building_slots = 20
+					add_manpower = 50000
+				}
+			}
+			add_manpower = 30000
 		}
 	}
 
 	focus = {
-		id = SAF_RWK_back_in_the_game
-		icon = GFX_goal_generic_occupy_start_war
+		id = SAF_RWK_help_from_allies
+		icon = GFX_focus_SWI_issue_war_bonds
 		prerequisite = { focus = SAF_RWK_country_reinstated }
 		x = 0
 		y = 1
@@ -3052,17 +3055,26 @@
 		}	
 		
 		completion_reward = {
-			
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = ENG
+			}	
 		}
 	}
 
 	focus = {
 		id = SAF_RWK_payback_time
-		icon = GFX_goal_generic_occupy_start_war
-		prerequisite = { focus = SAF_RWK_back_in_the_game }
+		icon = GFX_focus_attack_germany
+		prerequisite = { focus = SAF_RWK_help_from_allies }
 		x = 0
 		y = 1
-		relative_position_id = SAF_RWK_back_in_the_game
+		relative_position_id = SAF_RWK_help_from_allies
 		
 		cost = 5
 		
@@ -3071,8 +3083,8 @@
 		}	
 		
 		completion_reward = {
-			
+			add_ideas = SAF_payback
 		}
 	}
+
 }
-	

@@ -202,7 +202,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
-				conscription_factor = -0.05
+				conscription_factor = 0.05
 			}
 
 		}
@@ -224,7 +224,7 @@ ideas = {
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
 				consumer_goods_factor = -0.05
-				conscription_factor = -0.10
+				conscription_factor = 0.10
 			}
 
 		}
@@ -243,10 +243,10 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				industrial_capacity_factory = 0.1
+				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.1
 				consumer_goods_factor = -0.1
-				conscription_factor = -0.15
+				conscription_factor = 0.15
 			}
 
 		}
@@ -494,9 +494,88 @@ ideas = {
 			picture = generic_army_bonus
 
 			modifier = {
-				special_forces_cap = 10
+				special_forces_cap = 0.05
+				special_forces_attack_factor = 0.05
 			}
 		}
+
+		SAF_sf_cap_flat = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_army_bonus
+
+			modifier = {
+				special_forces_min = 60
+				training_time_factor = -0.20
+			}
+		}
+
+		SAF_exiled {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_exile
+
+			modifier = {
+				legitimacy_daily = 0.05
+				weekly_manpower = 1000
+			}
+		}
+
+		SAF_exiled_2 {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_exile
+
+			modifier = {
+				stability_weekly = 0.001
+				war_support_weekly = 0.001
+			}
+		}
+
+		SAF_payback {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_tech_bonus
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		 }
+		
 
 		SAF_vehicle_speed_breakthrough_spirit = {
 			allowed = {
@@ -650,8 +729,35 @@ ideas = {
 					instant = yes
 				}
 			
+			}
 		}
-	}
+
+		SAF_heavy_anti_tank = {
+		
+			picture = generic_artillery_regiments
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			equipment_bonus = {
+				heavy_anti_tank_equipment = {
+					hard_attack = 0.1
+					ap_attack = 0.05
+					instant = yes
+				}
+				heavy_artillery_equipment = {
+					hard_attack = 0.1
+					instant = yes
+				}
+				anti_tank_equipment = {
+					hard_attack = 0.1
+					instant = yes
+				}
+			}
+		}
 
 	tank_manufacturer = {
 
