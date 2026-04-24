@@ -6663,6 +6663,30 @@ focus_tree = {
 					remove_dynamic_modifier = { modifier = autonomous_state_egypt }
 				}
 			}
+			298 = {
+				if = {
+				limit = {
+						has_dynamic_modifier = { modifier = autonomous_state_egypt }
+					}
+					remove_dynamic_modifier = { modifier = autonomous_state_egypt }
+				}
+			}
+			700 = {
+				if = {
+				limit = {
+						has_dynamic_modifier = { modifier = autonomous_state_egypt }
+					}
+					remove_dynamic_modifier = { modifier = autonomous_state_egypt }
+				}
+			}
+			900 = {
+				if = {
+				limit = {
+						has_dynamic_modifier = { modifier = autonomous_state_egypt }
+					}
+					remove_dynamic_modifier = { modifier = autonomous_state_egypt }
+				}
+			}
 		}
 	}
 
