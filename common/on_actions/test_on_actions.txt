@@ -7,12 +7,12 @@
                     FROM = { tag = CHI }
                 }
 			        country_event = { id = speech.10 }
-                    every_country = {
-			        if = {
-                    limit = { has_country_flag = ai_speeches }
-			        sound_effect = sp_usa_dem_AL_spirit.of.america
-			        }
-		        }
+                    #every_country = {
+			        #if = {
+                    #limit = { has_country_flag = ai_speeches }
+			        #sound_effect = sp_usa_dem_AL_spirit.of.america
+			        #}
+		        #}
             }
             if = {
                 limit = {
@@ -20,24 +20,24 @@
                     FROM = { tag = USA }
                 }
 			        country_event = { id = speech.11 }
-                    every_country = {
-			        if = {
-                    limit = { has_country_flag = ai_speeches }
-			        sound_effect = sp_USA_warwithJAP
-			        }
-		        }
+                    #every_country = {
+			        #if = {
+                    #limit = { has_country_flag = ai_speeches }
+			       #sound_effect = sp_USA_warwithJAP
+			        #}
+		        #}
             }
             if = {
                 limit = {
                     ROOT = { tag = GER }
                     FROM = { tag = BEL }
                 }
-                    every_country = {
-			        if = {
-                    limit = { has_country_flag = ai_speeches }
-			        sound_effect = sp_ger_sudeten
-			        }
-		        }
+                    #every_country = {
+			        #if = {
+                    #limit = { has_country_flag = ai_speeches }
+			       # sound_effect = sp_ger_sudeten
+			       # }
+		        #}
             }
             if = {
                 limit = {
@@ -45,13 +45,13 @@
                     FROM = { tag = SOV }
                 }
 			    country_event = { id = speech.9 }
-                    every_country = {
-			        if = {
-                    limit = { has_country_flag = ai_speeches }
-			        sound_effect = sp_ger_russia
-			        sound_effect = sp_ger_waronusa
-			        }
-			        }
+                    #every_country = {
+			       # if = {
+                   # limit = { has_country_flag = ai_speeches }
+			        #sound_effect = sp_ger_russia
+			       ##sound_effect = sp_ger_waronusa
+			       # }
+			       # }
 			        }
             if = {
                 limit = {
@@ -59,12 +59,12 @@
                     FROM = { tag = POL }
                 }
 			        country_event = { id = speech.8 }
-                    every_country = {
-			        if = {
-                    limit = { has_country_flag = ai_speeches }
-			        sound_effect = sp_ger_POL
-			        }
-			        }
+                    #every_country = {
+			        #if = {
+                    #limit = { has_country_flag = ai_speeches }
+			        #sound_effect = sp_ger_POL
+			       # }
+			        #}
 			        }
 		        }
             }
