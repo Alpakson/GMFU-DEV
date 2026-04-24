@@ -15,7 +15,7 @@ state=
 		buildings = {
 			infrastructure = 2
 			arms_factory = 2
-			industrial_complex = 4
+			industrial_complex = 5
 			7959 = {
 				naval_base = 2
 			}
@@ -24,6 +24,7 @@ state=
 			7959 3
 		}
 		add_core_of = GHA
+		add_dynamic_modifier = { modifier = autonomous_state_egypt }
 	}
 	provinces={
 		7959 8006
