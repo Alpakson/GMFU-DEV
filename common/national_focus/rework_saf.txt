@@ -665,7 +665,6 @@
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = SAF_south_african_railways
 		}
 	}
@@ -1658,17 +1657,10 @@
 				uses = 2
 				category = artillery
 			}
-			IF = {
-                limit = {
-                    has_character = JAP_tomoyuki_yamashita
-                    JAP_tomoyuki_yamashita = {
-                        NOT = { has_trait = trait_mountaineer }
-                    }
-                }
-                JAP_tomoyuki_yamashita = {
-                    add_trait = { trait = trait_mountaineer }
-                }
-            }
+			mio:ENG_crossley_motors_organization = {
+				add_mio_size = 2
+				add_mio_funds = 1000
+			}
 		}
 	}
 

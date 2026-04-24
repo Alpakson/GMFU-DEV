@@ -265,6 +265,8 @@
  SAF_RWK_payback_time:0 "Vengeance on the Axis"
  SAF_RWK_payback_time_desc:0 "The scars of occupation run deep. South Africa now turns outward, preparing to strike back against the Axis and reclaim its honor on the battlefield."
 #ideas
+SAF_heavy_anti_tank:0 "Heavy Anti-Tank"
+SAF_heavy_anti_tank_desc:0 "South African forces develop specialized anti-tank weapons to counter enemy armor. These powerful guns are designed to penetrate the toughest tanks, giving infantry a fighting chance against mechanized threats."
 #ideas
  SAF_vehicle_speed_breakthrough_spirit:0 "Spirit of the Veld"
  SAF_vehicle_speed_breakthrough_spirit_desc:0 "Across the burning sands and open veld, South African crews learn to master speed and endurance. Their vehicles are driven to the brink, striking fast before the enemy can react."
