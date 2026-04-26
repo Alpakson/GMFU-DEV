@@ -47,7 +47,7 @@ focus_tree = {
 	focus = {
 		id = ENG_rearmament
 		icon = GFX_goal_generic_build_tank
-		x = 60
+		x = 70
 		y = 0
 		cost = 8
 		ai_will_do = {
@@ -172,7 +172,7 @@ focus_tree = {
 		icon = GFX_royal_army
 		prerequisite = { focus = ENG_rearmament }
 		
-		x = -19
+		x = -24
 		y = 1
 		relative_position_id = ENG_rearmament
 		
@@ -192,185 +192,341 @@ focus_tree = {
 			army_experience = 25
 		}
 	}
-	
-	#focus = {
-	#	id = ENG_home_guard
-	#	icon = GFX_focus_eng_concessions_to_the_trade_unions
-	#	prerequisite = { focus = ENG_army_rearmament }
-	#	available = {
-	#		has_war_with = GER
-	#	}
-	#
-	#	available_if_capitulated = no
-	#
-	#	x = 1
-	#	y = 1
-	#	relative_position_id = ENG_army_rearmament
-	#	cost = 2
-	#	ai_will_do = {
-	#		factor = 1
-	#	}	
-	#	completion_reward = {
-	#		hidden_effect = {
-	#			hidden_effect = {
-	#				division_template = {
-	#					name = "Home Guard"
-	#					is_locked = yes
-	#					regiments = {
-	#						militia = { x = 0 y = 0 }
-	#						militia = { x = 0 y = 1 }
-	#						militia = { x = 0 y = 2 }
-	#				
-	#						militia = { x = 1 y = 0 }
-	#						militia = { x = 1 y = 1 }
-	#						militia = { x = 1 y = 2 }
-	#				
-	#						militia = { x = 2 y = 0 }
-	#						militia = { x = 2 y = 1 }
-	#						militia = { x = 2 y = 2 }
-	#						militia = { x = 3 y = 0 }
-	#						#artillery_brigade = { x = 3 y = 0}
-	#						#anti_tank_brigade = { x = 3 y = 1}
-	#				
-	#					}
-	#					support = {
-	#						engineer = { x = 0 y = 0 }   
-	#						anti_air = { x = 0 y = 1 }
-	#					}
-	#				}
-	#				# 40 Spawn Ins
-	#				126 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				125 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				122 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				127 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				123 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				338 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				253 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				128 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				129 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				130 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				132 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				131 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				133 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				121 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				120 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				136 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#				119 = {
-	#					if = {					
-	#						limit = { is_controlled_by = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#						create_unit = { division = "division_template = \"Home Guard\" force_equipment_variants = { infantry_equipment_0 = { owner = \"ENG\" } squad_equipment_0 = { owner = \"ENG\" } artillery_equipment_1 = { owner = \"ENG\" } anti_tank_equipment_1 = { owner = \"ENG\" } }" owner = ENG }
-	#					}
-	#				}
-	#			}
-	#		}
-	#		custom_effect_tooltip = ENG_home_guard_tt
-	#	}
-	#}
+	#sf tree
+	focus = {
+		id = ENG_special_forces_doctrine
+		icon = GFX_focus_eng_special_air_service
+		prerequisite = { focus =  ENG_army_rearmament }
+		x = 0
+		y = 1
+		relative_position_id = ENG_army_rearmament
+		cost = 5
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = ENG_special_forces_doctrine_dcr
+				cost_reduction = 0.5
+				uses = 2
+				category = special_forces_doctrine
+			}
+		}
+	}
+
+
+
+	# Tier 2 - Specialization Choice
+	focus = {
+		id = ENG_amphibious_special_forces
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = ENG_special_forces_doctrine  }
+		mutually_exclusive = { focus = ENG_mountain_special_forces focus = ENG_special_air_service }
+		x = -4
+		y = 1
+		relative_position_id = ENG_special_forces_doctrine
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = marine_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_mountain_special_forces
+		icon = GFX_focus_SMB_a_land_of_mountains
+		prerequisite = { focus = ENG_special_forces_doctrine }
+		mutually_exclusive = { focus = ENG_amphibious_special_forces focus = ENG_special_air_service }
+		x = 0
+		y = 1
+		relative_position_id = ENG_special_forces_doctrine
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	# Amphibious Branch - Island Warfare
+	focus = {
+		id = ENG_marine_training_program
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = ENG_amphibious_special_forces }
+		x = 0
+		y = 1
+		relative_position_id = ENG_amphibious_special_forces
+		cost = 5
+
+		completion_reward = {
+			army_experience = 25
+			random_army_leader = {
+				limit = {
+					NOT = { has_trait = naval_invader }
+				}
+				add_unit_leader_trait = naval_invader
+			}
+			random_army_leader = {
+				limit = {
+					NOT = { has_trait = commando }
+				}
+				add_unit_leader_trait = commando
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_naval_invasion_tactics
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = ENG_marine_training_program }
+		x = -1
+		y = 1
+		relative_position_id = ENG_marine_training_program
+		cost = 5
+
+		completion_reward = {
+			custom_effect_tooltip = ENG_modify_spirit_of_rattanakosin_dynamic_modifier_tt
+			add_to_variable = {
+				ENG_var_naval_invasion_penalty = -0.075
+				tooltip = naval_invasion_penalty_tt
+			}
+			add_to_variable = {
+				ENG_var_shore_bombardment_bonus = 0.1
+				tooltip = shore_bombardment_bonus_tt
+			}
+			force_update_dynamic_modifier = yes
+		}
+	}
+
+	focus = {
+		id = ENG_coastal_assault_doctrine
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = ENG_marine_training_program }
+		x = 1
+		y = 1
+		relative_position_id = ENG_marine_training_program
+		cost = 5
+
+		completion_reward = {
+			army_experience = 25
+			add_ideas = ENG_amphibious_equipment_production
+		}
+	}
+
+	focus = {
+		id = ENG_royal_marines
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = ENG_naval_invasion_tactics }
+		prerequisite = { focus = ENG_coastal_assault_doctrine }
+		x = 0
+		y = 2
+		relative_position_id = ENG_marine_training_program
+		cost = 5
+
+		completion_reward = {
+			custom_effect_tooltip = ENG_modify_spirit_of_rattanakosin_dynamic_modifier_tt
+			add_to_variable = {
+				ENG_var_special_forces_defence_factor = 0.04
+				tooltip = special_forces_defence_factor_tt
+			}
+			add_to_variable = {
+				ENG_var_special_forces_attack_factor = 0.04
+				tooltip = special_forces_attack_factor_tt
+			}				
+			force_update_dynamic_modifier = yes
+		}
+	}
+
+	# Mountain Branch - India Campaign
+	focus = {
+		id = ENG_mountain_warfare_school
+		icon = GFX_focus_SMB_a_land_of_mountains
+		prerequisite = { focus = ENG_mountain_special_forces }
+		x = 0
+		y = 1
+		relative_position_id = ENG_mountain_special_forces
+		cost = 5
+
+		completion_reward = {
+			add_to_variable = {
+				ENG_var_army_artillery_attack_factor = 0.03
+				tooltip = army_artillery_attack_factor_tt
+			}			
+			add_to_variable = {
+				ENG_var_attrition = -0.05
+				tooltip = attrition_tt
+			}	
+		}
+	}
+
+	focus = {
+		id = ENG_high_altitude_training
+		icon = GFX_focus_SMB_a_land_of_mountains
+		prerequisite = { focus = ENG_mountain_warfare_school }
+		x = -1
+		y = 1
+		relative_position_id = ENG_mountain_warfare_school
+		cost = 5
+
+		completion_reward = {
+			custom_effect_tooltip = ENG_modify_spirit_of_rattanakosin_dynamic_modifier_tt
+			add_to_variable = {
+				ENG_var_acclimatization_cold_climate_gain_factor = 0.25
+				tooltip = acclimatization_cold_climate_gain_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_indian_frontier_tactics
+		icon = GFX_focus_SMB_a_land_of_mountains
+		prerequisite = { focus = ENG_mountain_warfare_school }
+		x = 1
+		y = 1
+		relative_position_id = ENG_mountain_warfare_school
+		cost = 5
+
+		completion_reward = {
+			custom_effect_tooltip = ENG_modify_spirit_of_rattanakosin_dynamic_modifier_tt
+			add_to_variable = {
+				ENG_var_supply_consumption_factor = -0.10
+				tooltip = supply_consumption_factor_tt
+			}
+			force_update_dynamic_modifier = yes
+				random_army_leader = {
+				limit = {
+					NOT = { has_trait = hill_fighter }
+				}
+				add_unit_leader_trait = hill_fighter
+			}
+							random_army_leader = {
+				limit = {
+					NOT = { has_trait = trait_mountaineer }
+				}
+				add_unit_leader_trait = trait_mountaineer
+			}
+		}
+	}
+	focus = {
+		id = ENG_royal_mountaineers
+		icon = GFX_focus_SMB_a_land_of_mountains
+		prerequisite = { focus = ENG_high_altitude_training }
+		prerequisite = { focus = ENG_indian_frontier_tactics }
+		x = -1
+		y = 1
+		relative_position_id = ENG_indian_frontier_tactics
+		cost = 5
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ENG_special_air_service
+		icon = GFX_red_devils
+		prerequisite = { focus = ENG_special_forces_doctrine }
+        mutually_exclusive = { focus = ENG_mountain_special_forces focus = ENG_amphibious_special_forces}
+		x = 4
+		y = 1
+		cost = 5
+		relative_position_id = ENG_special_forces_doctrine
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ENG_expand_special_forces_idea1
+				add_idea = ENG_expand_special_forces_idea2
+			}
+			
+			add_tech_bonus = {
+				name = mar_bonus
+				bonus = 0.5
+				uses = 2
+				category = para_tech
+			}
+		}
+	}
+	focus = {
+		id = ENG_air1
+		icon = GFX_red_devils
+		prerequisite = { focus = ENG_special_air_service }
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = ENG_special_air_service
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ENG_air2
+		icon = GFX_red_devils
+		prerequisite = { focus = ENG_air1 }
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = ENG_air1
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ENG_air3
+		icon = GFX_red_devils
+		prerequisite = { focus = ENG_air1 }
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = ENG_air1
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ENG_air4
+		icon = GFX_red_devils
+		prerequisite = { focus = ENG_air2 }
+		prerequisite = { focus = ENG_air3 }
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = ENG_air2
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+
+		}
+	}
 	
 	focus = {
 		id = ENG_equip_foreign_exiles
@@ -459,7 +615,7 @@ focus_tree = {
 		
 		prerequisite = { focus = ENG_army_rearmament }
 		
-		x = -6
+		x = -11
 		y = 1
 		relative_position_id = ENG_army_rearmament
 		
@@ -477,9 +633,9 @@ focus_tree = {
 		id = ENG_modernise_the_artilly
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = ENG_expand_the_army }
-		mutually_exclusive = { focus = ENG_rocket_artillery_development }
+
 		
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = ENG_expand_the_army
 		
@@ -502,9 +658,8 @@ focus_tree = {
 		id = ENG_rocket_artillery_development
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = ENG_expand_the_army }
-		mutually_exclusive = { focus = ENG_modernise_the_artilly }
-		
-		x = -1
+
+		x = 0
 		y = 1
 		relative_position_id = ENG_expand_the_army
 		
@@ -529,7 +684,7 @@ focus_tree = {
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = ENG_expand_the_army }
 		
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = ENG_expand_the_army
 		
@@ -654,160 +809,8 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = ENG_special_forces
-		icon = GFX_sas
-		prerequisite = { focus = ENG_army_rearmament}
-		
-		x = 0
-		y = 1
-		relative_position_id = ENG_army_rearmament
-		
-		cost = 5
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_ideas = ENG_expand_special_forces_idea1
-			add_potential_special_forces_tree = yes
-		}
-	}
+
 	
-	focus = {
-		id = ENG_special_air_service
-		icon = GFX_red_devils
-		prerequisite = { focus = ENG_special_forces }
-		x = -2
-		y = 1
-		cost = 5
-		relative_position_id = ENG_special_forces
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = ENG_expand_special_forces_idea1
-				add_idea = ENG_expand_special_forces_idea2
-			}
-			
-			add_tech_bonus = {
-				name = mar_bonus
-				bonus = 0.5
-				uses = 2
-				category = para_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = ENG_new_transports
-		icon = GFX_focus_generic_long_range_aircraft
-		prerequisite = { focus = ENG_special_air_service }
-		
-		x = -1
-		y = 1
-		relative_position_id = ENG_special_air_service
-		
-		cost = 5
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_tech_bonus = {
-				name = transport_bonus
-				ahead_reduction = 1.5
-				bonus = 1
-				uses = 1
-				category = transport_planes_cat
-			}
-		}
-	}
-	
-	focus = {
-		id = ENG_improved_training
-		icon = GFX_focus_eng_special_air_service
-		prerequisite = { focus = ENG_special_air_service }
-		x = 1
-		y = 1
-		cost = 5
-		relative_position_id = ENG_special_air_service
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = ENG_david_stirling
-		}
-	}
-	
-	focus = {
-		id = ENG_royal_marines
-		icon = GFX_royal_marines_laurel
-		prerequisite = { focus = ENG_special_forces }
-		x = 2
-		y = 1
-		cost = 5
-		relative_position_id = ENG_special_forces
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_tech_bonus = {
-				name = mar_bonus
-				bonus = 0.5
-				uses = 2
-				category = marine_tech
-				category = tp_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = ENG_commandos
-		icon = GFX_ENG_goal_generic_build_navy_2
-		prerequisite = { focus = ENG_royal_marines }
-		x = 0
-		y = 1
-		cost = 5
-		relative_position_id = ENG_royal_marines
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			hidden_effect = {
-				set_technology = {
-					commandos = 1
-				}
-			}
-			custom_effect_tooltip = ENG_commandos_tt
-		}
-	}
-	
-	focus = {
-		id = ENG_improve_doctrine
-		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = ENG_special_forces }
-		
-		x = -0
-		y = 1
-		relative_position_id = ENG_special_forces
-		
-		cost = 5
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		completion_reward = {
-            add_doctrine_cost_reduction = {
-                cost_reduction = 0.25
-                uses = 2
-                category = special_forces_doctrine
-            }
-		}
-	}
 	
 	# Tank Tree
 	focus = {
@@ -815,7 +818,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mechanized
 		prerequisite = { focus = ENG_army_rearmament }
 		
-		x = 7
+		x = 12
 		y = 1
 		relative_position_id = ENG_army_rearmament
 		
@@ -843,7 +846,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_mechanize_infantry }
 		mutually_exclusive = { focus = ENG_cruiser_tanks }
 		
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = ENG_mechanize_infantry
 		
@@ -866,11 +869,11 @@ focus_tree = {
 	focus = {
 		id = ENG_subsidise_vauxhall
 		icon = GFX_vauxhall_tank
-		prerequisite = { focus = ENG_infantry_tanks }
+		prerequisite = { focus = ENG_infantry_tanks focus = ENG_cruiser_tanks }
 		
-		x = -1
-		y = 1
-		relative_position_id = ENG_infantry_tanks
+		x = 0
+		y = 2
+		relative_position_id = ENG_mechanize_infantry
 		
 		cost = 5
 		
@@ -890,7 +893,7 @@ focus_tree = {
 		icon = GFX_ITA_innovative_theories
 		prerequisite = { focus = ENG_infantry_tanks }
 		
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ENG_infantry_tanks
 		
@@ -937,28 +940,6 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = ENG_subsidise_vickers
-		icon = GFX_goal_continuous_armor_production
-		prerequisite = { focus = ENG_mechanize_infantry }
-		
-		x = 4
-		y = 1
-		relative_position_id = ENG_mechanize_infantry
-		
-		cost = 5
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		completion_reward = {
-			mio:ENG_vickers_armstrong_eng_organization = {
-				add_mio_size = 2
-				add_mio_funds_gain_factor = 0.1
-			}
-		}
-	}
 	
 	focus = {
 		id = ENG_adapt_africa
@@ -966,7 +947,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_cruiser_tanks }
 		prerequisite = { focus = ENG_subsidise_vickers }
 		
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ENG_cruiser_tanks
 		
@@ -990,7 +971,7 @@ focus_tree = {
 		icon = GFX_tank_churchill
 		prerequisite = { focus = ENG_subsidise_vauxhall focus = ENG_adapt_europe focus = ENG_adapt_africa }
 		
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = ENG_adapt_europe
 		
