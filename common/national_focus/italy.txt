@@ -2657,31 +2657,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_state_core = 448
 			448 = {
 				add_dynamic_modifier = {
-					modifier = ITA_africa_territories
+					modifier = ITA_africa_territories scope = ITA
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_state_core = 449
 			449 = {
 				add_dynamic_modifier = {
-					modifier = ITA_africa_territories
+					modifier = ITA_africa_territories scope = ITA
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_state_core = 450
 			450 = {
 				add_dynamic_modifier = {
-					modifier = ITA_africa_territories
+					modifier = ITA_africa_territories scope = ITA
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_state_core = 451
 			451 = {
 				add_dynamic_modifier = {
-					modifier = ITA_africa_territories
+					modifier = ITA_africa_territories scope = ITA
 				}
 			}
 		}
@@ -4326,48 +4322,6 @@ focus_tree = {
 			set_cosmetic_tag = greater_italy
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = ITA_bba
-
-			if = {
-				limit = {
-					has_completed_focus = ITA_incorporate_libya
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				hidden_effect = {
-					448 = {
-						remove_dynamic_modifier = {
-							modifier = ITA_africa_territories
-						}
-						add_dynamic_modifier = {
-							modifier = ITA_africa_territories_2
-						}
-					}
-					449 = {
-						remove_dynamic_modifier = {
-							modifier = ITA_africa_territories
-						}
-						add_dynamic_modifier = {
-							modifier = ITA_africa_territories_2
-						}
-					}
-					450 = {
-						remove_dynamic_modifier = {
-							modifier = ITA_africa_territories
-						}
-						add_dynamic_modifier = {
-							modifier = ITA_africa_territories_2
-						}
-					}
-					451 = {
-						remove_dynamic_modifier = {
-							modifier = ITA_africa_territories
-						}
-						add_dynamic_modifier = {
-							modifier = ITA_africa_territories_2
-						}
-					}
-				}
-				custom_effect_tooltip = fourth_shote_modification_tt
-			}
 
 			if = {
 				limit = {
