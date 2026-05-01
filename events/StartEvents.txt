@@ -238,6 +238,10 @@ news_event = { # Strike USA
 		trigger = {
         TAG = JAP
 		}
+		add_timed_idea = {
+			idea = JAP_tora_tora_tora_idea
+			days = 90
+		}
 	}
 	
 	option = {

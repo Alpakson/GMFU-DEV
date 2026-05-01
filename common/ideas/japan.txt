@@ -1664,12 +1664,20 @@ ideas = {
 			picture = generic_navy_carrier_bonus
 			
 			modifier = {
-				port_strike = 1
-				carrier_capacity_penalty_reduction = -0.5
-				sortie_efficiency = 0.5
-				naval_strike_attack_factor = 0.12
-				naval_strike_targetting_factor = 0.12
-				naval_strike_agility_factor = 0.12
+				port_strike = 1.5
+				sortie_efficiency = 0.50
+				naval_strike_attack_factor = 0.25
+				naval_strike_targetting_factor = 0.25
+				naval_strike_agility_factor = 0.25
+				invasion_preparation = -0.5
+				amphibious_invasion = 0.50
+				naval_speed_factor = 0.2
+				naval_hit_chance = 0.1
+				naval_critical_score_chance_factor = 0.1
+				naval_damage_factor = 0.1
+				naval_defense_factor = 0.1
+				navy_anti_air_attack_factor = 0.1
+				experience_gain_navy_unit_factor = 0.33
 			}
 		}
 
