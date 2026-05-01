@@ -42,16 +42,8 @@ ITA_africa_territories = {
 	icon = GFX_modifiers_generic_defense
 
 	state_production_speed_buildings_factor = 0.05
-	army_core_attack_factor = -0.1
-	army_core_defence_factor = -0.1
-}
-
-ITA_africa_territories_2 = {
-	enable = { always = yes }
-
-	icon = GFX_modifiers_generic_defense
-
-	state_production_speed_buildings_factor = 0.05
+	army_attack_factor = 0.05
+	army_defence_factor = 0.05
 }
 
 autonomous_state_egypt = {
