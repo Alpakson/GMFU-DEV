@@ -1042,3 +1042,6 @@ NDefines.NGame.LAG_DAYS_FOR_PAUSE = 200
 
 NDefines.NAI.UPDATE_SUPPLY_MOTORIZATION_FREQUENCY_HOURS = 8760     -- Check if activating motorization would improve supply situation this often.
 NDefines.NAI.DIVISION_SUPPLY_RATIO_TO_MOTORIZE = 0						-- If supply ratio is less than this, consider motorizing any applicable nearby supply hub
+
+
+	DEFAULT_COASTAL_PROTECTION_STABILITY = 0.0,		-- Default stability when the coastal states are fully protected
