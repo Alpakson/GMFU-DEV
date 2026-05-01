@@ -37,6 +37,7 @@ NDefines.NDiplomacy.EMBARGO_NEIGHBOUR_AI_WEIGHT = -25					-- AI weight for diffe
 -- NDefines.NDiplomacy.NAVAL_BLOCKADE_DAILY_COST = 0.25					-- Daily PP cost for one naval blockade
 -- NDefines.NDiplomacy.NAVAL_BLOCKADE_THREAT_THRESHOLD = 20				-- Target-generated threat threshold to allow naval blockade
 
+NDefines.NCountry.DEFAULT_COASTAL_PROTECTION_STABILITY = 0.0		-- Default stability when the coastal states are fully protected
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 40						-- Events are checked every X day per country or state (1 is ideal but CPU heavy)
 NDefines.NCountry.BASE_RESEARCH_SLOTS = 4						-- Base number of research slots per country.
 NDefines.NCountry.AIR_SCORE_MULTIPLIER = 0.0						-- Based on number of planes (which is typically a lot).
@@ -928,7 +929,6 @@ NDefines.NIndustrialOrganisation.MAX_FUNDS_FROM_MANUFACTURER_PER_DAY = 0  -- Max
 -- NDefines.NIndustrialOrganisation.DEFAULT_INITIAL_TASK_CAPACITY = 5			-- Default start task capacity for each MIO (may be overriden in DB)
 NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.50	 	   -- % of equipment lost to strength ratio in combat so some % is returned if below 1
 NDefines.NMilitary.COMMANDER_LEVEL_UP_STAT_COUNT = 0
-
 NDefines.NDoctrines.TRAINING_MASTERY_GAIN_FACTOR = 0				-- How much training contributes to doctrine mastery relative to combat/missions
 -- NDefines.NDoctrines.MASTERY_BANK_CONVERSION_RATE = 0.3 				-- The rate at which mastery gained when a track is finished or empty is "banked"
 NDefines.NDoctrines.MASTERY_BANK_MAX = 300							-- The maximum amount of mastery that can be banked
@@ -1043,6 +1043,3 @@ NDefines.NGame.LAG_DAYS_FOR_PAUSE = 200
 
 NDefines.NAI.UPDATE_SUPPLY_MOTORIZATION_FREQUENCY_HOURS = 8760     -- Check if activating motorization would improve supply situation this often.
 NDefines.NAI.DIVISION_SUPPLY_RATIO_TO_MOTORIZE = 0						-- If supply ratio is less than this, consider motorizing any applicable nearby supply hub
-
-
-	DEFAULT_COASTAL_PROTECTION_STABILITY = 0.0,		-- Default stability when the coastal states are fully protected
