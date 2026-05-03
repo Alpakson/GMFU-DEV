@@ -661,7 +661,7 @@ country_event = {
 	option = {
 		name = JUNO_brazil_events.163.b
 		ai_chance = {
-			base = 1
+			base = 100
 		}
 		BRA_mio_military_factory = yes
 		BRA_mio_military_factory = yes
