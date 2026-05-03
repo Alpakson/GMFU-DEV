@@ -12,7 +12,26 @@ ITA_spa_organisationn = {
 	include = generic_armored_car_organization
 	icon = GFX_idea_FRA_panhard
 	allowed = {	
-		original_tag = ITA 
+		OR = {
+			tag = ITA 
+			AND = {
+				tag = BUL 
+				has_dlc = "Battle for the Bosporus"
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = { FROM = { original_tag = BUL } }
+			FROM = {
+				OR = {
+					is_subject = no
+					is_subject_of = ITA
+				}
+				has_completed_focus = BUL_cooperation_with_italy
+			}
+		}
 	}
 
 	add_trait = { 
@@ -24,6 +43,7 @@ ITA_spa_organisationn = {
 	 	position = { x=9 y=0 }
 		
 	 	available = {
+			
 	 	}
 
 	 	organization_modifier = {
@@ -314,6 +334,16 @@ ITA_navalmeccanica_organization = {
 	# 	}
 	# }
 } 
+
+ITA_oto_livorno_organization = {
+	include = generic_refurbishment_repair_organization
+	icon = GFX_idea_GER_kriegsmarinewerft_wilhelmshaven
+	
+	allowed = {	
+		tag = ITA 
+	}
+
+}
 
 ITA_cantiere_navale_di_ancona_organization = {
 	include = generic_raider_ship_organization

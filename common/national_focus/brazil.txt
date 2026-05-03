@@ -5283,7 +5283,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = BRA_address_labor_disputes
 		prerequisite = { focus = BRA_address_labor_disputes }
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 5
 		}
