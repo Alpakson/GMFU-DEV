@@ -1891,39 +1891,7 @@ country_event = {
 			}
 		}
 		add_war_support = 0.05
-		if = {
-			limit = {
-				NOT = {
-					any_other_country = {
-						is_literally_china = no #This is a YES because of the NOT statement. Yes, it looks really weird, just roll with it
-						has_faction_template = faction_template_chinese_united_front
-					}
-				}
-			}
-			hidden_effect = {
-				news_event = { id = news.288 days = 1 } # United Front forms
-			}
-			FROM = {
-				hidden_effect = { 
-                    set_rule = { can_create_factions = yes }
-                    set_rule = { can_join_factions = yes }
-                }
-				create_faction_from_template = faction_template_chinese_united_front
-				add_to_faction = ROOT
-				set_country_flag = PRC_created_faction_flag
-				country_event = { id = SEA_PRC_faction_events.53 days = 1 }
-				add_faction_initiative = 1
-			}
-		}
-		else = {
-			FROM = {
-				create_faction_from_template = faction_template_PRC_the_peoples_front
-				add_to_faction = ROOT
-				set_country_flag = PRC_created_faction_flag
-				country_event = { id = SEA_PRC_faction_events.53 days = 1 }
-				
-			}
-		}
+
 	}
 	option = { #No - When Hell Freezes over
 		name = SEA_PRC_faction_events.10.b
@@ -1965,47 +1933,11 @@ country_event = {
 			country_event = { id = SEA_PRC_faction_events.11 days = 1 }
 		}
 		effect_tooltip = {
-			FROM = {
-				create_faction_from_template = faction_template_PRC_the_peoples_front
-			}
+
 		}
 	}
 }
 
-#PRC: Chi refuses our offer, the fools!
-country_event = { 
-	id = SEA_PRC_faction_events.11
-	title = SEA_PRC_faction_events.11.t
-	desc = SEA_PRC_faction_events.11.desc
-	picture = GFX_report_event_chinese_soldiers
-	is_triggered_only = yes
-	
-	option = { #Fools!
-		name = SEA_PRC_faction_events.11.a
-		set_rule = { can_create_factions = yes }
-		set_rule = { can_join_factions = yes }
-		create_faction_from_template = faction_template_PRC_the_peoples_front
-		every_other_country = {
-			limit = {
-				is_chinese_warlord = yes
-				has_capitulated = no
-				is_in_faction = no
-				is_subject = no
-				NOT = { 
-					has_war_with = ROOT
-					has_border_war_with = ROOT
-					has_idea = SIK_battle_for_sinkiang
-					#tag = HBC
-					any_other_country = {
-						is_literally_china = yes
-						has_war_with = PREV
-					}
-				}
-			}
-			country_event = { id = SEA_PRC_faction_events.50 days = 2 }
-		}
-	}
-}
 
 #WARLORDS: Prc is questioneing the faction leadership
 country_event = { 
@@ -2361,169 +2293,6 @@ country_event = {
 	}
 }
 
-#PRC needs to choose what to do with their faction and how to approach the Chinese warlords
-country_event = { 
-	id = SEA_PRC_faction_events.40
-	title = SEA_PRC_faction_events.40.t
-	desc = SEA_PRC_faction_events.40.desc
-	picture = GFX_report_event_generic_communist_congress
-	is_triggered_only = yes
-	
-	option = { #Do nothing
-		name = SEA_PRC_faction_events.40.a
-		ai_chance = {
-			base = 5
-		}
-		add_stability = 0.025
-		
-	}
-	option = { #Sayonara - we're starting up our own faction!
-		name = SEA_PRC_faction_events.40.b
-		trigger = {
-			is_faction_leader = no
-		}
-		ai_chance = {
-			base = 10
-		}
-		every_other_country = {
-			limit = {
-				is_in_faction_with = ROOT
-				is_faction_leader = yes
-			}
-			country_event = { id = SEA_PRC_faction_events.41 hours = 1 }
-		}
-		leave_faction = ROOT
-		
-		if = {
-			limit = {
-				NOT = { has_rule = can_create_factions }
-			}
-			set_rule = { can_create_factions = yes }
-		}
-		create_faction_from_template = faction_template_PRC_the_peoples_front
-		add_faction_initiative = 1
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		every_other_country = {
-			limit = {
-				is_chinese_warlord = yes
-				has_capitulated = no
-				is_in_faction = no
-				is_subject = no
-				NOT = { 
-					has_war_with = ROOT
-					has_border_war_with = ROOT
-					has_idea = SIK_battle_for_sinkiang
-					any_other_country = {
-						is_chinese_warlord = yes
-						has_war_with = PREV
-					}
-				}
-			}
-			country_event = { id = SEA_PRC_faction_events.50 days = 2 }
-		}
-	}
-	option = { #We're leaving!
-		name = SEA_PRC_faction_events.40.c
-		trigger = {
-			is_faction_leader = no
-		}
-		ai_chance = {
-			base = 25
-		}
-		every_other_country = {
-			limit = {
-				is_in_faction_with = ROOT
-				is_faction_leader = yes
-			}
-			country_event = { id = SEA_PRC_faction_events.41 hours = 1 }
-		}
-		leave_faction = ROOT
-	}
-	option = { #If faction leader, leave and give faction leader to else
-		name = SEA_PRC_faction_events.40.d
-		trigger = {
-			is_faction_leader = yes
-		}
-		ai_chance = {
-			base = 25
-		}
-
-
-		every_other_country = {
-			limit = {	
-				is_in_faction_with = ROOT
-				faction_influence_rank < 3 ## Leaves the faction and gives faction leader to highest influence rank
-			}
-			set_faction_leader = yes
-			country_event = { id = SEA_PRC_faction_events.41 hours = 1 }
-		}
-		leave_faction = ROOT
-
-
-		#every_other_country = {
-		#	limit = {
-		#		is_literally_china = yes
-		#		is_in_faction_with = ROOT
-		#		NOT = { is_subject_of = ROOT }
-		#	}
-		#
-		#	effect_tooltip = {
-		#		ROOT = { remove_from_faction = PREV }
-		#	}
-		#	country_event = { id = SEA_PRC_faction_events.42 hours = 1 }
-		#}
-	}
-	option = { #Invite other Chinese sates!
-		name = SEA_PRC_faction_events.40.e
-		trigger = {
-			is_faction_leader = yes
-		}
-		ai_chance = {
-			base = 5
-		}
-
-		every_other_country = {
-			limit = {
-				is_literally_china = yes
-				has_capitulated = no
-				is_in_faction = no
-				is_subject = no
-				NOT = { 
-					has_war_with = ROOT
-					has_border_war_with = ROOT
-					has_idea = SIK_battle_for_sinkiang
-					any_other_country = {
-						is_chinese_warlord = yes
-						has_war_with = PREV
-					}
-				}
-			}
-			custom_effect_tooltip = if_they_accept_tt 
-			effect_tooltip = {
-				ROOT = { add_to_faction = PREV }
-			}
-			country_event = { id = SEA_PRC_faction_events.50 days = 3 random_days = 2 }
-		}
-	}
-}
-#Faction Leader is notified that PRC is leaving
-country_event = { 
-	id = SEA_PRC_faction_events.41
-	title = SEA_PRC_faction_events.41.t
-	desc = SEA_PRC_faction_events.41.desc
-	picture = GFX_report_event_generic_sign_treaty2
-	is_triggered_only = yes
-	
-	option = { #There is nothing to be done
-		name = SEA_PRC_faction_events.41.a
-		add_faction_influence_ratio = -0.025
-		effect_tooltip = {
-			leave_faction = FROM
-		}
-	}
-}
 #Chinese Faction member is notified that PRC kicked them out
 country_event = { 
 	id = SEA_PRC_faction_events.42

@@ -3232,19 +3232,6 @@ focus_tree = {
 			# effect_tooltip = { #This is done for tooltip purposes
 			# 	add_dynamic_modifier = { modifier = GER_bewegungskrieg_modifier }
 			# }
-			IF = {
-				limit = { 
-					has_dlc = "No Compromise, No Surrender"
-					is_faction_leader = yes
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_faction_goal_slot = {
-					category  = short_term # options: short_term, medium_term, long_term 
-					value = 1 
-				}
-				add_faction_goal = faction_goal_an_infantry_army
-				
-			}
 		}
 	}
 	
@@ -4654,18 +4641,6 @@ focus_tree = {
 			# effect_tooltip = { #This is done for tooltip purposes
 			# 	add_dynamic_modifier = { modifier = GER_blitzkrieg_modifier }
 			# }
-			IF = {
-				limit = { 
-					has_dlc = "No Compromise, No Surrender"
-					is_faction_leader = yes
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_faction_goal_slot = {
-					category  = short_term # options: short_term, medium_term, long_term 
-					value = 1 
-				}
-				add_faction_goal = faction_goal_an_armored_fist
-			}
 		}
 	}
 	
@@ -17298,10 +17273,6 @@ focus_tree = {
 					}
 					remove_from_faction = GER
 				}
-				create_faction_from_template = {
-					template = faction_template_regional_anti_democratic
-					name = the_berlin_moscow_axis
-				}
 				add_timed_idea = {
 					idea = soviet_german_friendship
 					days = 730
@@ -25670,25 +25641,6 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = GER_central_european_alliance_tt
 			}
-			effect_tooltip = {
-				create_faction_from_template = {
-					template = faction_template_POR_popular_front_bloc
-					name = GER_proletarian_international_alliance
-					icon = GFX_faction_logo_generic_9
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						is_in_faction = no
-					}
-					create_faction_from_template = {
-						template = faction_template_POR_popular_front_bloc
-						name = GER_proletarian_international_alliance
-						icon = GFX_faction_logo_generic_9
-					}
-				}
-			}
 		}
 	}
 	focus = {
@@ -30267,30 +30219,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
-
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				custom_effect_tooltip = GER_central_european_alliance_tt
-			}
-			effect_tooltip = {
-				create_faction_from_template = faction_template_GER_mitteleuropa_alliance
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			hidden_effect = {
-				if = {
-					limit = {
-						is_in_faction = no
-					}
-					create_faction_from_template = faction_template_GER_mitteleuropa_alliance
-				}
-			}
-
-			custom_effect_tooltip = GER_mitteleuropa_tt
-
 		}
 	}
 
@@ -39060,67 +38988,6 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				create_faction_from_template = {
-					template = faction_template_GER_mitteleuropa_alliance
-					name = GER_central_powers_faction
-					icon = GFX_faction_logo_generic_13
-				}
-			}
-
-			if = {
-				limit = {
-					ITA = { 
-						is_subject = no
-						is_in_faction = no
-						has_government = neutrality
-						NOT = { has_war_with = GER }
-					}					
-				}
-				ITA = { country_event = { id = generic.5 } }
-			}
-			if = {
-				limit = {
-					HUN = { 
-						is_subject = no
-						is_in_faction = no
-						has_government = neutrality
-						NOT = { has_war_with = GER }
-					}					
-					NOT = { country_exists = AUS }
-				}
-				HUN = { country_event = { id = generic.5 } }
-			}
-			if = {
-				limit = {
-					AUS = { 
-						exists = yes
-						is_subject = no
-						is_in_faction = no
-						has_government = neutrality
-						NOT = { has_war_with = GER }
-					}		
-					NOT = { country_exists = HUN }			
-				}
-				AUS = { country_event = { id = generic.5 } }
-			}
-			if = {
-                limit = {
-                    BUL = { 
-                        exists = yes
-                        is_subject = no
-                        is_in_faction = no
-                        has_government = neutrality
-                        NOT = { has_war_with = GER }
-                    }
-                }
-                BUL = { country_event = { id = generic.5 } }
-            }
-		}
 	}
 
 	focus = {
@@ -40258,126 +40125,6 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = GER_central_european_alliance_tt
-			effect_tooltip = {
-				create_faction_from_template = {
-					template = faction_template_GER_mitteleuropa_alliance
-					name = GER_central_european_alliance
-					icon = GFX_faction_logo_generic_2
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						is_in_faction = no
-					}
-					create_faction_from_template = {
-						template = faction_template_GER_mitteleuropa_alliance
-						name = GER_central_european_alliance
-						icon = GFX_faction_logo_generic_2
-					}
-				}
-			}
-			every_country = {
-				limit = {
-					has_idea = GER_the_great_red_menace
-					has_idea = neutrality_idea
-				}
-				remove_ideas = neutrality_idea
-			}
-			SOV = { country_event = { id = wtt_germany.20 days = 1 } }
-			hidden_effect = {
-				news_event = { id = wtt_news.22 hours = 6 }
-				if = {
-					limit = {
-						FRA = { has_government = communism }
-					}
-					random_other_country = {
-						limit = {
-							original_tag = SPR
-							has_government = communism
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "FRA"			
-							value = 200
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "FRA"			
-							value = 200
-						}
-					}
-				}
-				if = {
-					limit = {
-						SOV = { has_government = communism }
-					}
-					random_other_country = {
-						limit = {
-							original_tag = SPR
-							has_government = communism
-							NOT = { has_completed_focus = SPR_hinder_nkvd_interference }
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "SOV"			
-							value = 200
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "SOV"			
-							value = 200
-						}
-					}
-				}
-				if = {
-					limit = {
-						FRA = { has_government = fascism }
-					}
-					random_other_country = {
-						limit = {
-							original_tag = SPR
-							has_government = fascism
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "FRA"			
-							value = 200
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "FRA"			
-							value = 200
-						}
-					}
-				}
-				if = {
-					limit = {
-						SOV = { has_government = fascism } #futureproofing
-					}
-					random_other_country = {
-						limit = {
-							original_tag = SPR
-							has_government = fascism
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "SOV"			
-							value = 200
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "SOV"			
-							value = 200
-						}
-					}
-				}
-				# Making England less likely to guarantee European nations.
-				ENG = {
-					GER_democratic_nations_ai_strategies = yes
-				}
-			}
 		}
 	}
 

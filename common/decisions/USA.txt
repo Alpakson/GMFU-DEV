@@ -661,22 +661,7 @@ USA_war_plans = {
 							}
 						}
 					}
-					hidden_effect = {
-						add_faction_goal_slot = {
-							category  = long_term 
-							value = 1 
-						}
-					}
-					add_faction_goal = faction_goal_contain_japanese_expansion_asia
-					custom_effect_tooltip = generic_skip_one_line_tt
-				}
-				else = {
-					custom_effect_tooltip = USA_unlock_contain_japan_tt
-					effect_tooltip = {
-						add_faction_goal = faction_goal_contain_japanese_expansion_asia
-					}
-					custom_effect_tooltip = generic_skip_one_line_tt
-				}
+
 			}
 		}
 		modifier = {

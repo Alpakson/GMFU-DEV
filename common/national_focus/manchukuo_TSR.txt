@@ -3857,14 +3857,7 @@
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			IF = {
-				limit = {
-					is_faction_leader = no
-				}
-				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_MAN_popular_front
-			}
-			add_faction_initiative = 1
+
 			every_country = {
 				limit = {
 					is_literally_china = yes

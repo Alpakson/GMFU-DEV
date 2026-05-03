@@ -5084,12 +5084,6 @@ focus_tree = {
 			set_cosmetic_tag = european_union_leader
 			custom_effect_tooltip = generic_skip_one_line_tt
 			set_faction_name = BEL_european_union
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				set_faction_manifest = faction_manifest_strength_in_unity
-			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = AUS_via_danube_to_europe_tt
 

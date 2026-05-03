@@ -7466,15 +7466,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION } 
 		completion_reward = {
 			custom_effect_tooltip = AFG_exploit_turko_persian_heritage_tt
-			IF = {
-				limit = {
-					is_in_faction = no
-				}
-				create_faction_from_template = {
-					template = faction_template_AFG_united_islamic_world_faction
-					name = AFG_turko_persian_union
-				}
-			}
 		}
 	}
 

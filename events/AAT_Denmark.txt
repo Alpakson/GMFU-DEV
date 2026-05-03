@@ -7058,22 +7058,7 @@ country_event = { #Denmark joins the alliance
 			}
 			FROM = { add_to_faction = ROOT }
 		}
-		else = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_DEN_nordic_cooperation_alliance
-				add_faction_initiative = 1
-				add_to_faction = FROM
-			}
-			ELSE = {
-				set_rule = { can_create_factions = yes }
-				create_faction = DEN_nordic_cooperation_alliance
-				add_to_faction = FROM
-			}
-		}
+
 	}
 }
 country_event = { #Denmark is refused alliance membership

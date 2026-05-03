@@ -2714,19 +2714,7 @@ country_event = {
 				hours = 1
 			}		
 		}
-		effect_tooltip = {
-			FROM = {
-				add_timed_idea = {
-					idea = JAP_japanese_chinese_friendship
-					days = 730
-				}
-				
-				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_JAP_sino_japanese_pact
-				add_to_faction = ROOT
-				add_named_threat = { threat = 3 name = SEA_japan_foreign_policy.42.t }
-			}
-		}
+
 
 	}
 
@@ -2763,9 +2751,6 @@ country_event = {
 			days = 730
 		}
 		
-		set_rule = { can_create_factions = yes }
-		create_faction_from_template = faction_template_JAP_sino_japanese_pact
-		add_to_faction = FROM
 		add_named_threat = { threat = 3 name = SEA_japan_foreign_policy.42.t }
 
 		set_country_flag = JAP_CHI_pact_is_active_flag

@@ -13292,30 +13292,6 @@ GER_realpolitik_cat = {
 					hours = 18
 				}	
 			}
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				IF = {
-					limit = {
-						is_faction_leader = no
-					}
-					create_faction_from_template = faction_template_GER_mitteleuropa_alliance
-				}
-				HOL = {
-					add_state_claim = 977
-					add_state_claim = 6
-				}
-
-				custom_effect_tooltip = generic_skip_one_line_tt
-
-				add_state_claim = 980
-				add_state_claim = 34
-				add_to_faction = HOL
-				create_wargoal = {
-					type = take_claimed_state
-					target = BEL
-					generator = { 980 34 }
-				}	
-			}
 
 			hidden_effect = {
 				set_country_flag = GER_currently_holding_backdoor_negitations_flag

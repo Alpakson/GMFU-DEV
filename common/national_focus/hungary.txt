@@ -1089,18 +1089,6 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_balkan_pact
-				add_faction_initiative = 1
-			}
-			ELSE = {
-				set_rule = { can_create_factions = yes }
-				create_faction = HUN_BALKAN_FACTION
-			}
 		}
 	}
 

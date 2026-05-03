@@ -8872,44 +8872,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			IF = {
-				limit = {
-					is_in_faction = yes
-				}
-				leave_faction = yes
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				add_war_support = 0.05
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				create_faction_from_template = {
-					template = faction_template_generic_dominance
-					name = PER_middle_east_protectorate_faction
-					icon = GFX_faction_logo_generic_15
-				}
-	
-				hidden_effect = {
-					set_rule = { can_send_volunteers = yes }
-					set_rule = { can_create_factions = yes }
-					set_rule = { can_join_factions = no }
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					is_in_faction = no
-				}
-				add_war_support = 0.05
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				create_faction_from_template = {
-					template = faction_template_generic_dominance
-					name = PER_middle_east_protectorate_faction
-					icon = GFX_faction_logo_generic_15
-				}
-	
-				hidden_effect = {
-					set_rule = { can_send_volunteers = yes }
-					set_rule = { can_create_factions = yes }
-					set_rule = { can_join_factions = no }
-				}
-			}
 		}
 	}
 
@@ -10343,20 +10305,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_PER_islamic_faction
-				add_faction_initiative = 1
-			}
-			ELSE = {
-				set_rule = { can_create_factions = yes }
-				create_faction = PER_islamic_faction
-			}
-
 		}
 
 	}
@@ -12295,38 +12243,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			set_rule = {
-				can_create_factions = yes				
-			}
-			IF = {
-				limit = {
-					is_in_faction = no
-				}
-				create_faction_from_template = faction_template_PER_communist_faction
-			}
-			
-			every_other_country = {
-				limit = {
-					OR = {
-						tag = AFG
-						tag = PAK
-						tag = IRQ
-						#tag = KUW
-						#tag = SAU
-						tag = OMA
-						tag = YEM
-					}
-					NOT = {
-						has_war_with = ROOT
-					}
-					has_government = ROOT
-					is_in_faction = no
-				}
-				add_opinion_modifier = {
-					modifier = small_increase
-					target = ROOT
-				}
-			}
 		}
 	}
 
