@@ -1332,7 +1332,7 @@ FRA_intervention_in_overseas_territories = {
 			random_list = {
 				20 = {
 					VIC = { country_event = LaR_france_vichy_notification_events.5 }
-					FRA_transfer_north_africa_effect = yes
+					#FRA_transfer_north_africa_effect = yes
 					every_owned_state = {
 						limit = {
 							is_controlled_by = ROOT
@@ -1347,6 +1347,13 @@ FRA_intervention_in_overseas_territories = {
 							}
 						}
 						add_compliance = 5
+						transfer_state = 461
+						transfer_state = 462
+						transfer_state = 459
+						transfer_state = 513
+						transfer_state = 460
+						transfer_state = 458
+						transfer_state = 665
 					}
 				}
 				80 = {
@@ -1422,7 +1429,7 @@ FRA_intervention_in_overseas_territories = {
 			random_list = {
 				50 = {
 					VIC = { country_event = LaR_france_vichy_notification_events.1 }
-					FRA_transfer_syria_effect = yes
+					#FRA_transfer_syria_effect = yes
 					every_owned_state = {
 						limit = {
 							is_controlled_by = ROOT
@@ -1434,7 +1441,12 @@ FRA_intervention_in_overseas_territories = {
 							}
 						}
 						add_compliance = 5
+
 					}
+					transfer_state = 677
+					transfer_state = 680
+					transfer_state = 554
+					transfer_state = 553
 				}
 				50 = {}
 			}
@@ -1526,7 +1538,7 @@ FRA_intervention_in_overseas_territories = {
 			random_list = {
 				20 = {
 					VIC = { country_event = LaR_france_vichy_notification_events.2 }
-					FRA_transfer_indochina_effect = yes
+					#FRA_transfer_indochina_effect = yes
 					every_owned_state = {
 						limit = {
 							is_controlled_by = ROOT
@@ -1540,6 +1552,11 @@ FRA_intervention_in_overseas_territories = {
 						}
 						add_compliance = 5
 					}
+					transfer_state = 671
+					transfer_state = 670
+					transfer_state = 286
+					transfer_state = 741
+					transfer_state = 1017
 				}
 				80 = {}
 			}
@@ -1747,7 +1764,7 @@ FRA_intervention_in_overseas_territories = {
 			random_list = {
 				25 = {
 					VIC = { country_event = LaR_france_vichy_notification_events.3 }
-					FRA_transfer_central_africa_effect = yes
+					#FRA_transfer_central_africa_effect = yes
 					every_owned_state = {
 						limit = {
 							is_controlled_by = ROOT
@@ -1761,6 +1778,11 @@ FRA_intervention_in_overseas_territories = {
 						}
 						add_compliance = 5
 					}
+					transfer_state = 772
+					transfer_state = 539
+					transfer_state = 773
+					transfer_state = 660
+					transfer_state = 774
 				}
 				75 = {}
 			}
@@ -1976,7 +1998,7 @@ FRA_intervention_in_overseas_territories = {
 			random_list = {
 				100 = {
 					VIC = { country_event = LaR_france_vichy_notification_events.4 }
-					FRA_transfer_western_africa_effect = yes
+					#FRA_transfer_western_africa_effect = yes
 					every_owned_state = {
 						limit = {
 							is_controlled_by = ROOT
@@ -1993,6 +2015,17 @@ FRA_intervention_in_overseas_territories = {
 						}
 						add_compliance = 5
 					}
+					transfer_state = 557 
+					transfer_state = 272 
+					transfer_state = 556 
+					transfer_state = 780 
+					transfer_state = 779 
+					transfer_state = 778 
+					transfer_state = 781 
+					transfer_state = 776 
+					transfer_state = 898 
+					transfer_state = 899 
+					transfer_state = 777 
 				}
 				0 = {}
 			}

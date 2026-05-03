@@ -225,7 +225,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = ITA_economic_independence
-		cost = 10
+		cost = 6
 		ai_will_do = {
 			factor = 1
 		}
@@ -235,23 +235,23 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			if = {
+
+			random_owned_controlled_state = {
+				prioritize = { 159 }
 				limit = {
-					159 = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 2
-							include_locked = yes
-						}
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
 					}
+					is_controlled_by = ROOT
+					is_core_of = ROOT
 				}
-				159 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 3
-						instant_build = yes
-					}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -270,7 +270,7 @@ focus_tree = {
 				INDENT = "    "
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = ITA_timer_56_days_meritocracy_tt
+			custom_effect_tooltip = ITA_timer_35_days_meritocracy_tt
 		}
 	}
 	
@@ -1277,30 +1277,6 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = ITA_industry_nationalisation
-		icon = GFX_ITA_industrial_triangle
-		overlay = GFX_focus_fast_overlay_generic_clock
-		prerequisite = { focus = ITA_heavy_industry }
-		x = 0
-		y = 1
-		relative_position_id = ITA_heavy_industry
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-			add_ideas = ITA_nationalisation
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = ITA_timer_28_days_meritocracy_tt
-		}
-	}
-	
-	focus = {
 		id = ITA_heavy_industry
 		icon = GFX_focus_GER_wirtschaftswunder
 		overlay = GFX_focus_fast_overlay_generic_clock
@@ -1323,16 +1299,16 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
-						size > 2
+						size > 3
 						include_locked = yes
 					}
 					is_controlled_by = ROOT
 					is_core_of = ROOT
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -1344,16 +1320,41 @@ focus_tree = {
 	focus = {
 		id = ITA_research_slot
 		icon = GFX_focus_research
-		prerequisite = { focus = ITA_industry_nationalisation }
+		prerequisite = { focus = ITA_heavy_industry }
 		x = 0
 		y = 1
-		relative_position_id = ITA_industry_nationalisation
+		relative_position_id = ITA_heavy_industry
 		cost = 5
 
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
+
+	focus = {
+		id = ITA_industry_nationalisation
+		icon = GFX_ITA_industrial_triangle
+		overlay = GFX_focus_fast_overlay_generic_clock
+		prerequisite = { focus = ITA_research_slot }
+		x = 0
+		y = 1
+		relative_position_id = ITA_research_slot
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = ITA_nationalisation
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = ITA_timer_28_days_meritocracy_tt
+		}
+	}
+	
 
 	focus = {
 		id = ITA_proclaim_the_empire
@@ -2447,12 +2448,12 @@ focus_tree = {
 		completion_reward = {
 			add_country_leader_trait = political_reformer_tfc
 			reduce_focus_completion_cost = {
-				focus = { ITA_bank_loans_dora ITA_light_industry ITA_strengthen_northern_industry ITA_modernize_the_mezzogiorno ITA_agricultural_expansion ITA_industry_nationalisation ITA_heavy_industry ITA_german_investments }
+				focus = { ITA_investments_in_edison ITA_bank_loans_dora ITA_light_industry ITA_strengthen_northern_industry ITA_modernize_the_mezzogiorno ITA_agricultural_expansion ITA_industry_nationalisation ITA_heavy_industry ITA_german_investments }
 				cost = 7
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			reduce_focus_completion_cost = {
-				focus = { ITA_highway_expansion ITA_investments_in_edison   }
+				focus = { ITA_highway_expansion    }
 				cost = 14
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt

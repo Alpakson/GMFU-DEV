@@ -215,3 +215,7 @@
   #tt
 
   VIC_coring_tt:0 "This will §Rcore§! the following states depending on if they have been integrated: \n - §GTunisia, Algiers, Constantine, Casablanca, Marrakech, Gabes§! - if North Africa has been integrated\n - §GDamascus, Lebanon, Aleppo, Deiz-az-Zur§! - if Syria has been Integrated\n - §GFrench Guiana§! - if Guiana Was Integrated\n - §GIvory Coast, Gabon, Cameronon§! - if West Africa has been integrated"
+
+  #stuff
+
+  FRA_VICHY:0 "Vichy France"
