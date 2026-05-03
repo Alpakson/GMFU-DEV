@@ -10,7 +10,7 @@ faction_template_axis = {
 	}
 
 	default_rules = {
-		
+		government_in_exile_allowed
 	}
 	
 }
