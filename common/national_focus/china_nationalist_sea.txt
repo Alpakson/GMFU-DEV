@@ -3673,10 +3673,6 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-			set_faction_manifest = faction_manifest_chinese_wang_front_expansion
-			set_faction_rule = joining_rule_asia_pacific_ocenania_only
-			unlock_decision_category_tooltip = CHI_build_up_our_faction_cat
-			custom_effect_tooltip = CHI_start_looking_outwards_tt
 		}
 	}
 	focus = {
@@ -3805,9 +3801,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = CHI_bring_the_revolution_further_tt_2
-			hidden_effect = {
-				set_faction_manifest = faction_manifest_chinese_wang_front_expansion_2
-			}
 		}
 	}
 	focus = {
@@ -3821,8 +3814,6 @@ focus_tree = {
 		relative_position_id = CHI_punish_the_signatories
 		cost = 7
 		available = {
-			is_faction_leader = yes
-			faction_manifest_fulfillment > 0.8
 		}
 	
 		search_filters = {FOCUS_FILTER_ANNEXATION}
@@ -9566,6 +9557,7 @@ focus_tree = {
 		}
 	
 		completion_reward = {
+	}
 	}
 
 	focus = {

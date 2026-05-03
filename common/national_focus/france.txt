@@ -3040,7 +3040,6 @@
 					is_in_faction = no
 				}
 				set_rule = { can_create_factions = yes }
-				create_faction_from_template = faction_template_the_little_entente
 
 				CZE = { custom_effect_tooltip = invite_to_faction_tt }
 				hidden_effect = {
