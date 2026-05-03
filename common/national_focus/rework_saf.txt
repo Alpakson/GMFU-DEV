@@ -3062,7 +3062,6 @@
 		completion_reward = {
 			add_political_power = 150
 			add_ideas = SAF_retaking_homeland
-			add_ideas = SAF_exiled_2
 		}
 	}
 	
@@ -3083,12 +3082,6 @@
 
 		available = {
 			has_capitulated = yes
-			720 = {
-				controller = {
-					is_in_faction_with = ROOT
-				}
-			}
-			
 		}
 
 		bypass = {
@@ -3101,31 +3094,7 @@
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			720 = { 
-				set_building_level = {
-					type = coastal_bunker
-					level = 4
-					instant_build = yes
-				}
-				set_building_level = {
-					type = anti_air_building
-					level = 5
-					province = 4060
-					instant_build = yes
-				}
-				set_building_level = {
-					type = air_base
-					level = 2
-					province = 4060
-					instant_build = yes
-				}
-				transfer_state_to = SAF 
-				add_core_of = SAF	
-				hidden_effect = {
-					add_extra_state_shared_building_slots = 20
-					add_manpower = 50000
-				}
-			}
+			add_ideas = SAF_exiled_2
 			add_manpower = 30000
 		}
 	}
