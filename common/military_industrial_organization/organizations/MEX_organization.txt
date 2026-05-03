@@ -8,6 +8,20 @@
 
  #################### 
 
+
+MEX_diesel_organization = {
+	include = generic_armored_car_organization
+	icon = GFX_idea_GER_auto_union
+	allowed = {	
+		tag = MEX
+	}
+
+	available = {
+
+	}
+
+}
+
 MEX_tga_organization = {
 	include = generic_tank_organization
 	icon = GFX_idea_MEX_tga
