@@ -628,3 +628,15 @@ if = {
 	set_variable = { RAJ_congress_decision_cost_increment = 25 }
 
 }
+
+
+add_equipment_production = {
+    equipment = {
+        type = convoy_1
+        creator = RAJ
+    }
+    requested_factories = 15
+    progress = 0.0
+    efficiency = 0.7
+    amount = 2000
+}

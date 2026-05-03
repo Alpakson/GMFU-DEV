@@ -300,3 +300,15 @@ recruit_character = debug_hiroaki_abe
 recruit_character = debug_tadashige_daigo
 recruit_character = debug_gengo_hyakutake
 recruit_character = debug_nobutake_kondō
+
+
+add_equipment_production = {
+    equipment = {
+        type = convoy_1
+        creator = ROM
+    }
+    requested_factories = 15
+    progress = 0.0
+    efficiency = 0.7
+    amount = 2000
+}

@@ -118,3 +118,15 @@ set_grand_doctrine = new_fleet_in_being
 set_grand_doctrine = new_strategic_destruction
 }
 
+
+
+add_equipment_production = {
+    equipment = {
+        type = convoy_1
+        creator = INS
+    }
+    requested_factories = 15
+    progress = 0.0
+    efficiency = 0.7
+    amount = 2000
+}

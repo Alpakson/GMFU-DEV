@@ -392,3 +392,14 @@ if = {
 		}
 	}
 }
+
+add_equipment_production = {
+    equipment = {
+        type = convoy_1
+        creator = AST
+    }
+    requested_factories = 15
+    progress = 0.0
+    efficiency = 0.7
+    amount = 2000
+}

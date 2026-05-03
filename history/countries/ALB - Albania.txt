@@ -48,3 +48,15 @@ set_popularities = {
 
 set_convoys = 5
 
+
+
+add_equipment_production = {
+    equipment = {
+        type = convoy_1
+        creator = ALB
+    }
+    requested_factories = 15
+    progress = 0.0
+    efficiency = 0.7
+    amount = 2000
+}

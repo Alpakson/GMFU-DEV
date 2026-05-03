@@ -236,15 +236,9 @@ default_unit_production = {
 	}
 
 	ai_strategy = {
-		type = unit_ratio
-		id = convoy
-		value = 15
-	}
-
-	ai_strategy = {
 		type = equipment_production_min_factories
 		id = convoy
-		value = 1
+		value = 15
 	}
 
 	ai_strategy = {
@@ -1580,5 +1574,54 @@ put_garrisons_on_high_prio = {
 	ai_strategy = {
 		type = garrison_reinforcement_priority
 		value = 100 # positive is high prio, negative is low prio
+	}
+}
+GLOBAL_convoy_production = {
+	allowed = {
+		always = yes
+	}
+
+	enable = {
+		always = yes
+	}
+
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 15
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = convoy
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = capital_ship
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = screen_ship
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = submarine
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = carrier
+		value = -9999
 	}
 }
