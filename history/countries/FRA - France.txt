@@ -1,6 +1,8 @@
 ﻿capital = 16 # Paris/Ile de France
 
 oob = "FRA_1936"
+starting_train_buffer = 2
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "FRA_1936_naval_mtg"
@@ -56,6 +58,7 @@ set_technology = {
 	tech_mountaineers = 1
 	motorised_infantry = 1
 	gw_artillery = 1
+	armored_car1 = 1
 	fra_light_tank_1 = 1
 	fra_medium_tank_1 = 1
 	fra_heavy_tank_1 = 1
@@ -70,6 +73,10 @@ set_technology = {
 	basic_fortification_tech = 1
 	early_transport_plane = 1
 }
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 		set_technology = {
@@ -318,6 +325,20 @@ create_equipment_variant = {
 		engine_type_slot = tank_gasoline_engine
 	}
 	icon = "gfx/interface/technologies/tanks/fra/fra_medium_tank_1.dds"
+}
+create_equipment_variant = {
+	name = "B1 Tank"
+	type = fra_heavy_tank_chassis_b1
+	parent_version = 0
+	modules = {
+		main_armament_slot = tank_small_gun_1
+		turret_type_slot = tank_light_turret_1
+		suspension_type_slot = tank_bogie_suspension
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+		special_type_slot_2 = secondary_turret_small_cannon
+	}
+	icon = "gfx/interface/technologies/tanks/fra/fra_heavy_tank_1.dds"
 }
 create_equipment_variant = {
 	name = "Char 2C"
