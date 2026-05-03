@@ -7,162 +7,24 @@ shared_focus = {
 
 	icon = {
 		trigger = {
-			original_tag = CHL
-		}
-		value = GFX_focus_CHL_ejercito_de_chile
-	}
-	icon = {
-		trigger = {
-			original_tag = ARG
-		}
-		value = GFX_focus_ARG_army
-	}
-	icon = {
-		trigger = {
 			original_tag = BRA
 		}
 		value = GFX_focus_BRA_army
 	}
-	icon = {
-		trigger = {
-			NOT = {
-				OR = {
-					original_tag = CHL
-					original_tag = ARG
-					original_tag = BRA
-				}
-			}
-		}
-		value = GFX_goal_panzerwaffe
-	} 
+
 
 	x = 0
 	y = 0
 	offset = {
-		x = 26
+		x = 31
 		y = 0
 		trigger = {
 			tag = BRA
 		}
 	}
-	offset = {
-		x = 48
-		y = 0
-		trigger = {
-			tag = ARG 
-		}
-	}
 
-	offset = {
-		x = 74
-		y = 0
-		trigger = {
-			tag = CHL
-		}
-	}
 
-	# offset = {
-	# 	x = 56
-	# 	y = 0
-	# 	trigger = {
-	# 		tag = PAR
-	# 	}
-	# }
 
-	# offset = {
-	# 	x = 48
-	# 	y = 0
-	# 	trigger = {
-	# 		tag = URG
-	# 	}
-	# }
-
-	offset = {
-		x = -29
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			tag = CHL
-			has_completed_focus = CHL_look_to_tradition
-		}	
-	}
-
-	offset = {
-		x = -15
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			tag = CHL
-			has_completed_focus = CHL_address_the_mapuche_conflict
-		}
-	}
-
-	offset = {
-		x = -38
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			has_completed_focus = CHL_endorse_the_constitution
-		}
-	}
-
-	offset = {
-		x = -42
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			has_completed_focus = CHL_denounce_the_anarchy
-		}
-	}
-
-	offset = {
-		x = -7
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			has_completed_focus = CHL_rule_by_decree
-		}
-	}
-
-	offset = {
-		x = -33
-		y = 0
-		trigger = {
-			has_game_rule = {
-				rule = obsolete_focus_branches_visibility
-				option = HIDE
-			}
-			has_completed_focus = BRA_prepare_for_second_intentona
-		}	
-	}
-
-	offset = {
-		x = -15
-		y = 0
-		trigger = {
-			# has_game_rule = {
-			# 	rule = obsolete_focus_branches_visibility
-			# 	option = HIDE
-			# }
-			# has_completed_focus = BRA_end_the_state_of_emergency
-			always = yes
-		}	
-	}
 
 	cost = 5
 
@@ -182,14 +44,7 @@ shared_focus = {
 
 		army_experience = 25
 
-		IF = {
-			limit = {
-				has_idea = idea_CHL_repubican_guard
-			}
-			remove_ideas = {
-				idea_CHL_repubican_guard
-			}
-		}
+
 
 		random_core_state = {
 			limit = {
@@ -223,34 +78,10 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			add_dynamic_modifier = { modifier = CHL_army_modifier }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			add_dynamic_modifier = { modifier = BRA_army_modifier }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			add_dynamic_modifier = { modifier = ARG_army_modifier }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	add_dynamic_modifier = { modifier = PAR_army_modifier }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	add_dynamic_modifier = { modifier = URG_army_modifier }
-		# }
 		ELSE = {
 			add_dynamic_modifier = { modifier = south_american_army_modifier }
 		}
@@ -262,7 +93,7 @@ shared_focus = {
 	icon = GFX_focus_generic_reorient_production
 	relative_position_id = SMB_army
 	prerequisite = { focus = SMB_army }
-	x = -1
+	x = -2
 	y = 1
 
 	cost = 5
@@ -327,39 +158,12 @@ shared_focus = {
 		}
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-		# }
+
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
 			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
@@ -367,81 +171,22 @@ shared_focus = {
 
 	}
 }
-
-shared_focus = {
-	id = SMB_department_of_propaganda
-	icon = GFX_goal_generic_propaganda
-	relative_position_id = SMB_army
-	prerequisite = { focus = SMB_army }
-	x = -4
-	y = 1
-
-	cost = 10
-
-	available = {
-		OR = {
-			has_war = yes
-			threat > 0.49
-		}
-	}
-
-	#offset = {
-	#	x = -1
-	#	y = 0
-	#	trigger = {
-	#		tag = BRA
-	#	}
-	#}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-	
-		add_war_support = 0.1
-
-		add_popularity = {
-			ideology = ROOT
-			popularity = 0.05
-		}
-
-	}
-}
-
 shared_focus = {  
 	id = SMB_logistics_department
 	icon = GFX_focus_generic_supply_line
-	relative_position_id = SMB_army 
-	prerequisite = { focus = SMB_army }  
-	x = -6
+	relative_position_id = SMB_military_facilities
+	prerequisite = { focus = SMB_military_facilities focus = SMB_army_academy }  
+	x = 2
 	y = 1
 
-	cost = 10
+	cost = 6
 
-	#offset = {
-	#	x = 3
-	#	y = 0
-	#	trigger = {
-	#		tag = BRA
-	#	}
-	#}
 
-	allow_branch = { 
-		NOT = {
-			original_tag = CHL
-		}
-	}
+
+
 
 	available = {
-		#OR = {
-		#	has_war = yes
-		#	threat > 0.49
-		#}
+
 	}
 
 	bypass = {
@@ -453,15 +198,8 @@ shared_focus = {
 		}
 
 	completion_reward = {
+
 		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
-			add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.15 tooltip = production_speed_supply_node_factor_tt }
-		}
-		ELSE_IF = {
 			limit = {
 				original_tag = BRA
 			}
@@ -469,30 +207,6 @@ shared_focus = {
 			add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
 			add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.15 tooltip = production_speed_supply_node_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
-			add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.15 tooltip = production_speed_supply_node_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
-		# 	add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.15 tooltip = production_speed_supply_node_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
-		# 	add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.15 tooltip = production_speed_supply_node_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
 			add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
@@ -507,12 +221,7 @@ shared_focus = {
 	relative_position_id = SMB_logistics_department
 	prerequisite = { focus = SMB_logistics_department }
 	allow_branch = {
-		OR = {
-			TAG = ARG
-			#TAG = CHL
-			# TAG = PAR
-			# TAG = URG
-		}
+			TAG = BRA
 	}
 	x = 0
 	y = 1
@@ -532,116 +241,33 @@ shared_focus = {
 		}
 
 	completion_reward = {
-		#IF = {
-		#	limit = {
-		#		original_tag = BRA
-		#	}
-		#	add_tech_bonus = {
-		#		name = JUNO_support_company_initiative
-		#		bonus = 0.25
-		#		uses = 1
-		#		category = support_tech
-		#	}
-		#	set_technology = { TOA_jungle_pioneers_support_tech = 1 }
-		#}
-		#ELSE = {
-			add_tech_bonus = {
-				name = JUNO_support_company_initiative
-				bonus = 0.25
-				uses = 2
-				category = support_tech
-			}
-		#}
-	}
-}
-
-shared_focus = {
-	id = SMB_department_of_military_intelligence
-	icon = GFX_goal_generic_intelligence_exchange
-	relative_position_id = SMB_department_of_propaganda
-	prerequisite = { focus = SMB_department_of_propaganda }
-	x = 0
-	y = 1
-
-	cost = 10
-
-	available = {
-	}
-
-	allow_branch = {
-		has_dlc = "La Resistance"
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
+		add_tech_bonus = {
+			name = JUNO_support_company_initiative
+			bonus = 0.5
+			uses = 1
+			category = support_tech
 		}
-
-	completion_reward = {
-
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		# }
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		}
-
 		hidden_effect = {
-			set_technology = {
-				lar_decryption_bonus_tech = 1
+			set_technology = { 
+				TOA_jungle_pioneers_support_tech = 1 
 				popup = no
 			}
 		}
-		custom_effect_tooltip = lar_decryption_bonus_tt
+		custom_effect_tooltip = SMB_jungle_pioneers_tt	
 	}
 }
+
+
 
 shared_focus = {
 	id = SMB_motorized
 	icon = GFX_focus_generic_truck
 	relative_position_id = SMB_military_facilities
 	prerequisite = { focus = SMB_military_facilities focus = SMB_army_academy }
-	mutually_exclusive = { focus = SMB_regular_infantry }
 	x = 0
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -689,7 +315,7 @@ shared_focus = {
 	id = SMB_tank_warfare
 	icon = GFX_goal_generic_army_tanks
 	relative_position_id = SMB_motorized
-	prerequisite = { focus = SMB_motorized focus = SMB_regular_infantry }
+	prerequisite = { focus = SMB_motorized }
 	x = 0
 	y = 1
 
@@ -710,7 +336,7 @@ shared_focus = {
 	completion_reward = {
 		add_tech_bonus = {
 			name = JUNO_armor_modernization_initiative
-			bonus = 0.5
+			bonus = 0.35
 			uses = 2
 			category = armor
 		}
@@ -727,19 +353,14 @@ shared_focus = {
 		}
 		value = GFX_focus_BRA_dec
 	}
-	icon = {
-		trigger = {
-			NOT = {
-				original_tag = BRA
-			}
-		}
-		value = GFX_goal_generic_amphibious_assault
-	} 
+
 	mutually_exclusive = { focus = SMB_foreign_designs }
 	relative_position_id = SMB_tank_warfare
-	prerequisite = { focus = SMB_tank_warfare }
+	prerequisite = { focus = SMB_tank_warfare focus = SMB_artillery }
+
+	
 	x = 0
-	y = 1
+	y = 2
 
 	cost = 5
 
@@ -757,13 +378,6 @@ shared_focus = {
 
 	completion_reward = {
 		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-		}
-		ELSE_IF = {
 			limit = {
 				original_tag = BRA
 			}
@@ -780,27 +394,6 @@ shared_focus = {
 				}
 			}
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
@@ -808,173 +401,17 @@ shared_focus = {
 	}
 }
 
-shared_focus = {
-	id = SMB_tierra_del_fuego_training
-	icon = GFX_focus_SMB_tierra_del_fuego_training
-	mutually_exclusive = { focus = SMB_atacama_training }
-	relative_position_id = SMB_domestic_production
-	prerequisite = { focus = SMB_domestic_production focus = SMB_foreign_designs }
-	x = -2
-	y = 1
 
-	cost = 5
-
-	available = {
-		OR = {
-			controls_state = 953
-			controls_state = 507
-		}
-	}
-
-	bypass = {
-		
-	}
-
-	allow_branch = {
-		OR = {
-			original_tag = ARG
-			original_tag = CHL
-		}
-	}
-
-	ai_will_do = {
-			factor = 10
-		}
-
-	completion_reward = {
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
-		}
-		ELSE = { 
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
-		}
-	}
-}
-
-shared_focus = {
-	id = SMB_atacama_training
-	icon = GFX_focus_SMB_atacama_training
-	mutually_exclusive = { focus = SMB_tierra_del_fuego_training }
-	relative_position_id = SMB_domestic_production
-	prerequisite = { focus = SMB_domestic_production focus = SMB_foreign_designs }
-	x = -4
-	y = 1
-
-	cost = 5
-
-	available = {
-		OR = {
-			controls_state = 951
-			controls_state = 506
-			controls_state = 952
-			controls_state = 959
-			controls_state = 508
-			controls_state = 960
-		}
-	}
-
-	bypass = {
-		
-	}
-
-	allow_branch = {
-		OR = {
-			original_tag = ARG
-			original_tag = CHL
-		}
-	}
-
-	completion_reward = {
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
-		}
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
-		}
-	}
-}
-
-shared_focus = {
-	id = SMB_a_land_of_mountains
-	icon = GFX_focus_SMB_a_land_of_mountains
-	#mutually_exclusive = { focus = SMB_tierra_del_fuego_training }
-	relative_position_id = SMB_atacama_training
-	prerequisite = { focus = SMB_atacama_training focus = SMB_tierra_del_fuego_training }
-	x = 1
-	y = 1
-
-	cost = 10
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	allow_branch = {
-		original_tag = CHL
-	}
-
-	ai_will_do = {
-			factor = 10
-		}
-
-	completion_reward = {
-		custom_effect_tooltip = GRE_mountain_training_effect
-		hidden_effect = { set_technology = { mountain_warfare = 1 } }
-	}
-}
 
 shared_focus = {
 	id = SMB_mechanized_troops
 	icon = GFX_goal_generic_army_motorized
-	relative_position_id = SMB_tank_warfare
-	prerequisite = { focus = SMB_tank_warfare }
+	relative_position_id = SMB_motorized
 	prerequisite = { focus = SMB_motorized}
 	x = -2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -989,15 +426,15 @@ shared_focus = {
 		}
 
 	completion_reward = {
-		# add_tech_bonus = {
-		# 	name = motorized_bonus
-		# 	ahead_reduction = 2
-		# 	uses = 1
-		# 	category = motorized_equipment
-		# }
+		add_tech_bonus = {
+			name = motorized_bonus
+			ahead_reduction = 0.3
+			uses = 1
+			category = motorized_equipment
+		}
 		add_tech_bonus = {
 			name = JUNO_armor_modernization_initiative
-			bonus = 0.5
+			bonus = 0.35
 			uses = 2
 			category = motorized_equipment
 		}
@@ -1011,21 +448,13 @@ shared_focus = {
 			original_tag = BRA
 		}
 		value = GFX_focus_BRA_agulhas_negras
-	}
-	icon = {
-		trigger = {
-			NOT = {
-				original_tag = BRA
-			}
-		}
-		value = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
 	} 
 	relative_position_id = SMB_army
 	prerequisite = { focus = SMB_army }
-	x = 1
+	x = 2
 	y = 1
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 			factor = 20
@@ -1053,35 +482,20 @@ shared_focus = {
 			}
 		}
 
-		# IF = {
-		# 	limit = {
-		# 		original_tag = CHL
-		# 	}
-		# 	custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = BRA
-		# 	}
-		# 	custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = ARG
-		# 	}
-		# 	custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
-		# }
-		# ELSE = {
-		# 	custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
-		# }
+
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
+			#add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+		}
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
+			#add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+		}
 	}
 }
 
@@ -1090,11 +504,10 @@ shared_focus = {
 	icon = GFX_goal_generic_allies_build_infantry
 	relative_position_id = SMB_army_academy
 	prerequisite = { focus = SMB_army_academy focus = SMB_military_facilities }
-	mutually_exclusive = { focus = SMB_motorized }
 	x = 0
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -1112,48 +525,16 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
 		}
 
 		add_tech_bonus = {
@@ -1169,7 +550,7 @@ shared_focus = {
 	id = SMB_artillery
 	icon = GFX_goal_generic_army_artillery2
 	relative_position_id = SMB_regular_infantry
-	prerequisite = { focus = SMB_regular_infantry focus = SMB_motorized}
+	prerequisite = { focus = SMB_regular_infantry }
 	x = 0
 	y = 1
 
@@ -1210,7 +591,7 @@ shared_focus = {
 	relative_position_id = SMB_artillery
 	prerequisite = { focus = SMB_tank_warfare focus = SMB_artillery}
 	x = 0
-	y = 1
+	y = 2
 
 	cost = 5
 
@@ -1232,26 +613,6 @@ shared_focus = {
 		IF = {
 			limit = {
 				has_dlc = "Arms Against Tyranny"
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = infantry_equipment
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = motorized_equipment
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = artillery_equipment
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = anti_air_equipment
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
 			}
 			if = {
 				limit = {
@@ -1281,7 +642,7 @@ shared_focus = {
 	icon = GFX_focus_generic_military_mission
 	relative_position_id = SMB_domestic_production
 	prerequisite = { focus = SMB_domestic_production focus = SMB_foreign_designs}
-	x = 1
+	x = 2
 	y = 1
 
 	cost = 5
@@ -1312,7 +673,7 @@ shared_focus = {
 	x = -2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -1329,60 +690,18 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
+			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.20 tooltip = training_time_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.02 tooltip = army_attack_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.03 tooltip = army_defence_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.05 tooltip = army_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.04 tooltip = army_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.04 tooltip = army_org_factor_tt }
+			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.20 tooltip = training_time_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.03 tooltip = army_attack_factor_tt }
+			add_to_variable = { JUNO_army_modifier_army_defence_factor = 0.03 tooltip = army_defence_factor_tt }
 		}
 	}
 }
@@ -1396,8 +715,7 @@ shared_focus = {
 	x = 2
 	y = 1
  
-	cost = 10
-
+	cost = 8
 	available = {
 
 	}
@@ -1413,63 +731,28 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.05 tooltip = army_artillery_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
 			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.1 tooltip = training_time_factor_tt }
 			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
 		}
 	}
 }
 
-shared_focus = {
-	id = SMB_experimental_weapons_department
-	icon = GFX_focus_rocketry
-	relative_position_id = SMB_foreign_advisors
-	prerequisite = { focus = SMB_army_professionalism focus = SMB_conscription }
-	x = 0
-	y = 2
 
-	cost = 10
+shared_focus = {
+	id = SMB_joint_operative_command
+	icon = GFX_focus_generic_combined_arms
+	relative_position_id = SMB_army_professionalism
+	prerequisite = { focus = SMB_army_professionalism focus = SMB_conscription}
+	x = 2
+	y = 1
+
+	cost = 8
 
 	available = {
 
@@ -1485,37 +768,30 @@ shared_focus = {
 
 	completion_reward = {
 
-		add_breakthrough_progress = {
-			specialization = specialization_air
-			value = 0.75
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.1 tooltip = max_command_power_mult_tt }
+			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.075 tooltip = command_power_gain_mult_tt }
 		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		add_ideas = generic_secret_weapons_ns
-
-		#add_tech_bonus = {
-		#	name = secret_bonus
-		#	bonus = 0.5
-		#	uses = 2
-		#	category = electronics
-		#	category = nuclear
-		#	category = rocketry
-		#}
-
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.1 tooltip = max_command_power_mult_tt }
+			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.075 tooltip = command_power_gain_mult_tt }
+		}
 	}
 }
-
 shared_focus = {
-	id = SMB_nuclear_program
-	icon = GFX_focus_wonderweapons
-	relative_position_id = SMB_experimental_weapons_department
-	prerequisite = { focus = SMB_experimental_weapons_department }
-	prerequisite = { focus = SMB_strategic_bombing }
-	x = 3
-	y = 1
+	id = SMB_fortification_effort
+	icon = GFX_focus_FIN_coastal_defense
+	prerequisite = { focus = SMB_joint_operative_command }
+	relative_position_id = SMB_joint_operative_command
+	x = 0
+	y = 2
 
-	cost = 10
+	cost = 5
 
 	available = {
 
@@ -1526,38 +802,318 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 20
-	} 
+			factor = 20
+		}
+
+	completion_reward = {
+		JUNO_pick_navy_modifier_tt = yes
+		add_to_variable = {
+			JUNO_modifier_production_speed_coastal_bunker_factor = 0.1
+			tooltip = production_speed_coastal_bunker_factor_tt
+		}
+		IF = {
+			limit = {
+				original_tag = BRA
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			500 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 5172
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 10980
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 8190
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 12996
+				}
+			}
+			498 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 10933
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 2175
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes 
+					province = 13273
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SMB_air_defense
+	icon = GFX_focus_generic_air_defense
+	relative_position_id = SMB_fortification_effort
+	prerequisite = { focus = SMB_fortification_effort}
+	x = -1
+	y = 1
+
+
+	cost = 5
+
+	available = {
+			has_completed_focus = SMB_establish_aircraft_industry
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
+		}
 
 	completion_reward = {
 
-		if = {
+		IF = {
 			limit = {
-				NOT = {
-					has_tech = atomic_research
-				}
+				original_tag = BRA
 			}
-			add_tech_bonus = {
-				name = JUNO_nuclear_initiative
-				bonus = 1
-				uses = 1
-				category = nuclear
-			}
-			add_breakthrough_progress = {
-				specialization = specialization_nuclear
-				value = 0.25
-			}
-		}
-		else = {
-			add_breakthrough_progress = {
-				specialization = specialization_nuclear
-				value = 0.75
-			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
 		}
 
-	}   
-}  
- 
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
+		}
+
+		add_ideas = JUNO_hidden_aa_production_ns_2
+	}
+}
+
+
+shared_focus = {
+	id = SMB_merchant_marine
+	icon = GFX_focus_generic_merchant_fleet
+	prerequisite = { focus = SMB_fortification_effort }
+	relative_position_id = SMB_fortification_effort
+	x = 1
+	y = 1
+
+	cost = 5
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 10
+		}
+
+	completion_reward = {
+		add_ideas = POR_convoy_build_efficiency
+	}
+}
+
+
+shared_focus = {
+	id = SMB_war_planning_office
+	icon = GFX_focus_SOV_mobilization_plan
+	relative_position_id = SMB_joint_operative_command
+	prerequisite = { focus = SMB_joint_operative_command }
+	x = -1
+	y = 1
+
+	cost = 8
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
+		}
+
+	completion_reward = {
+
+		army_experience = 15
+		air_experience = 15
+		navy_experience = 15
+
+
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
+			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
+		}
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
+			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
+		}
+	}
+}
+
+shared_focus = {
+	id = SMB_women_in_aviation
+	icon = GFX_focus_SOV_women_in_aviation
+	relative_position_id = SMB_joint_operative_command
+	prerequisite = { focus = SMB_joint_operative_command }
+	x = 1
+	y = 1
+
+	cost = 8
+
+	available = {
+		OR = {
+			has_government = democratic
+			has_government = communism
+		}
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
+		}
+
+	completion_reward = {
+
+		air_experience = 50
+
+		set_rule = {
+			can_generate_female_aces = yes
+		}
+
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
+			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.1 tooltip = conscription_factor_tt }
+		}
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
+			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.1 tooltip = conscription_factor_tt }
+		}
+	}
+}
+shared_focus = {
+	id = SMB_department_of_propaganda
+	icon = GFX_goal_generic_propaganda
+	relative_position_id = SMB_army_professionalism
+	prerequisite = { focus = SMB_army_professionalism focus = SMB_conscription}
+	x = 6
+	y = 1
+
+	cost = 8
+
+	available = {
+		OR = {
+			has_war = yes
+			threat > 0.20
+		}
+	}
+
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
+		}
+
+	completion_reward = {
+	
+		add_war_support = 0.1
+
+		add_popularity = {
+			ideology = ROOT
+			popularity = 0.05
+		}
+
+	}
+}
+
+
+shared_focus = {
+	id = SMB_department_of_military_intelligence
+	icon = GFX_goal_generic_intelligence_exchange
+	relative_position_id = SMB_department_of_propaganda
+	prerequisite = { focus = SMB_department_of_propaganda }
+	x = 0
+	y = 1
+
+	cost = 8
+
+	available = {
+	}
+
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
+		}
+
+	completion_reward = {
+
+
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
+		}
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
+		}
+
+		hidden_effect = {
+			set_technology = {
+				lar_decryption_bonus_tech = 1
+				popup = no
+			}
+		}
+		custom_effect_tooltip = lar_decryption_bonus_tt
+	}
+} 
 shared_focus = {
 	id = SMB_special_forces
 	icon = GFX_focus_eng_special_air_service
@@ -1569,7 +1125,7 @@ shared_focus = {
 	cost = 5 
  
 	available = {  
-		date > 1941.1.1
+
 	}  
 
 	bypass = {
@@ -1596,42 +1152,20 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
+			#add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.15 tooltip = special_forces_cap_tt }
+			add_to_variable = {
+                JUNO_army_modifier_special_forces_cap_flat  = 28
+                tooltip = pol_special_forces_cap_flat_tt
+            }				
+			
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
+			#add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.15 tooltip = special_forces_cap_tt }
+			add_to_variable = {JUNO_army_modifier_special_forces_cap_flat  = 28 tooltip = pol_special_forces_cap_flat_tt }				
 		}
 	}
 }
@@ -1642,7 +1176,7 @@ shared_focus = {
 	relative_position_id = SMB_special_forces
 	prerequisite = { focus = SMB_special_forces }
 	mutually_exclusive = { focus = SMB_special_forces_option_2 focus = SMB_special_forces_option_3 }
-	x = -2
+	x = -3
 	y = 1
 
 	cost = 5
@@ -1659,27 +1193,8 @@ shared_focus = {
 			factor = 10
 		}
 
-	allow_branch = {
-		NOT = {
-			OR = {
-				original_tag = BRA
-				original_tag = ARG
-			}
-		}
-	}
 
-	offset = {
-		x = 1
-		y = 0
-		trigger = {
-			OR = {
-				original_tag = CHL
-				# original_tag = URG
-				# original_tag = PAR
-				# original_tag = BOL
-			}
-		}
-	}
+
 
 	completion_reward = {
 		IF = {
@@ -1751,9 +1266,9 @@ shared_focus = {
 		trigger = {
 			OR = {
 				original_tag = CHL
-				# original_tag = URG
-				# original_tag = PAR
-				# original_tag = BOL
+				original_tag = URG
+				original_tag = PAR
+				original_tag = BOL
 				original_tag = BRA
 				original_tag = ARG
 			}
@@ -1799,16 +1314,6 @@ shared_focus = {
 
 	cost = 5
 
-	allow_branch = {
-		NOT = {
-			OR = {
-				original_tag = CHL
-				# original_tag = URG
-				# original_tag = PAR
-				# original_tag = BOL
-			}
-		}
-	}
 
 	offset = {
 		x = -1
@@ -1888,97 +1393,16 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
+			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.15 tooltip = special_forces_out_of_supply_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.05 tooltip = special_forces_out_of_supply_factor_tt }
+			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.15 tooltip = special_forces_out_of_supply_factor_tt }
 		}
 
-		# IF = {
-		# 	limit = { has_dlc = "No Step Back" }
-		# 	IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = basic_light_tank_chassis
-		# 			}
-		# 		}
-		# 		set_technology = { basic_light_tank_chassis = 1 }
-		# 	}
-		# 	ELSE_IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = improved_light_tank_chassis
-		# 			}
-		# 		}
-		# 		set_technology = { improved_light_tank_chassis = 1 }
-		# 	}
-		# 	ELSE_IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = advanced_light_tank_chassis
-		# 			}
-		# 		}
-		# 		set_technology = { advanced_light_tank_chassis = 1 }
-		# 	}
-		# }
-		# ELSE = {
-		# 	IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = basic_light_tank
-		# 			}
-		# 		}
-		# 		set_technology = { basic_light_tank = 1 }
-		# 	}
-		# 	ELSE_IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = improved_light_tank
-		# 			}
-		# 		}
-		# 		set_technology = { improved_light_tank = 1 }
-		# 	}
-		# 	ELSE_IF = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_tech = advanced_light_tank
-		# 			}
-		# 		}
-		# 		set_technology = { advanced_light_tank = 1 }
-		# 	}
-		# }
 		army_experience = 15
 		air_experience = 15
 	}
@@ -2012,42 +1436,14 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
+			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 48 tooltip = extra_marine_supply_grace_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 24 tooltip = extra_marine_supply_grace_tt }
+			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 48 tooltip = extra_marine_supply_grace_tt }
 		}
 		
 		IF = {
@@ -2076,18 +1472,7 @@ shared_focus = {
 				}
 				set_technology = { mtg_tank_landing_craft = 1 }
 			}
-			IF = {
-				limit = {
-					NOT = { has_tech = amphibious_tank }
-				}
-				set_technology = { amphibious_tank = 1}
-			}
-			# ELSE_IF = {
-			# 	limit = {
-			# 		NOT = { has_tech = amphibious_drive }
-			# 	}
-			# 	set_technology = { amphibious_drive = 1}
-			# }
+
 		}
 		ELSE = {
 			IF = {
@@ -2161,223 +1546,140 @@ shared_focus = {
 			set_technology = { night_vision2 = 1 }
 		}	
 
-		IF = {
-			limit = {
-				original_tag = CHL
+			add_doctrine_cost_reduction = {
+				name = JUNO_expand_the_special_foces
+				cost_reduction = 0.5
+				uses = 2
+				category = special_forces_doctrine
 			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		# }
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.05 tooltip = special_forces_cap_tt }
-		}
 
 		army_experience = 30
 	}
 }
 
+
 shared_focus = {
-	id = SMB_mountain_guns
-	icon = GFX_focus_SMB_mountain_guns
-	relative_position_id = SMB_special_forces_option_1
-	prerequisite = { focus = SMB_special_forces_option_1 }
-	mutually_exclusive = { }
-	x = -2
+	id = SMB_tierra_del_fuego_training
+	icon = GFX_focus_SMB_tierra_del_fuego_training
+	mutually_exclusive = { focus = SMB_atacama_training }
+	relative_position_id = SMB_special_forces_option_1_continuation
+	prerequisite = { focus = SMB_special_forces_option_1_continuation focus = SMB_special_forces_option_3_continuation focus = SMB_special_forces_option_2_continuation }
+	x = 1
 	y = 1
 
 	cost = 5
 
 	available = {
-		NOT = {
-			has_tech = mountain_arty
-		}
 	}
 
 	bypass = {
 		
 	}
 
-	allow_branch = {
-		original_tag = CHL
-	}
 
 	ai_will_do = {
-			factor = 20
-		} 
-
-	completion_reward = {
-		
-		IF = {
-			limit = {
-				NOT = {
-					has_tech = mountain_arty
-				}
-			}
-			custom_effect_tooltip = mountain_guns_tt
-			hidden_effect = { set_technology = { mountain_arty = 1 } }
-		}
-
-	}
-}
-
-shared_focus = {
-	id = SMB_air_defense
-	icon = GFX_focus_generic_air_defense
-	relative_position_id = SMB_army
-	prerequisite = { focus = SMB_army }
-	prerequisite = { focus = SMB_air_force}
-	x = 4
-	y = 1
-
-	offset = {
-		x = 2
-		y = 0
-		trigger = {
-			tag = BRA
-		}
-	}
-
-	cost = 5
-
-	available = {
-		any_country = {
-			# NOT = {
-			# 	tag = ROOT
-			# }
-			has_completed_focus = SMB_establish_aircraft_industry
-		}
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
+			factor = 10
 		}
 
 	completion_reward = {
 		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
 			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
+			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
-		# }
-		ELSE = {
+		ELSE = { 
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.1 tooltip = production_speed_anti_air_building_factor_tt }
+			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
 		}
-
-		add_ideas = JUNO_hidden_aa_production_ns_2
 	}
 }
 
 shared_focus = {
+	id = SMB_atacama_training
+	icon = GFX_focus_SMB_atacama_training
+	mutually_exclusive = { focus = SMB_tierra_del_fuego_training }
+	relative_position_id = SMB_special_forces_option_1_continuation
+	prerequisite = { focus = SMB_special_forces_option_1_continuation focus = SMB_special_forces_option_3_continuation focus = SMB_special_forces_option_2_continuation }
+	x = 3
+	y = 1
+
+	cost = 5
+
+	available = {
+	}
+
+	bypass = {
+		
+	}
+
+
+
+	completion_reward = {
+		IF = {
+			limit = {
+				original_tag = BRA
+			}
+			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
+		}
+
+		ELSE = {
+			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
+			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
+		}
+	}
+}
+
+shared_focus = {
+	id = SMB_a_land_of_mountains
+	icon = GFX_focus_SMB_a_land_of_mountains
+	#mutually_exclusive = { focus = SMB_tierra_del_fuego_training }
+	relative_position_id = SMB_atacama_training
+	prerequisite = { focus = SMB_atacama_training focus = SMB_tierra_del_fuego_training }
+	x = -1
+	y = 1
+
+	cost = 8
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+
+
+	ai_will_do = {
+			factor = 10
+		}
+
+	completion_reward = {
+		custom_effect_tooltip = GRE_mountain_training_effect
+		hidden_effect = { set_technology = { mountain_warfare = 1 } }
+	}
+}
+shared_focus = {
 	id = SMB_air_force
 	#icon = GFX_goal_generic_build_airforce
 	relative_position_id = SMB_army
-	#prerequisite = { focus = SMB_army }
 	x = 8
 	y = 0
 
 	dynamic = yes
 
-	offset = {
-		x = 4
-		y = 0
-		trigger = {
-			tag = BRA
-		}
-	}
 
-	icon = {
-		trigger = {
-			original_tag = CHL
-		}
-		value = GFX_focus_CHL_fuerza_aerea_de_chile
-	}
-	icon = {
-		trigger = {
-			original_tag = ARG
-		}
-		value = GFX_focus_ARG_air_force
-	}
+
 	icon = {
 		trigger = {
 			original_tag = BRA
 		}
 		value = GFX_focus_BRA_air_force
 	}
-	icon = {
-		trigger = {
-			NOT = {
-				OR = {
-					original_tag = CHL
-					original_tag = ARG
-					original_tag = BRA
-				}
-			}
-		}
-		value = GFX_goal_generic_build_airforce
-	}
+
 
 	cost = 5
 
@@ -2431,36 +1733,13 @@ shared_focus = {
 			}
 		}
 
+
 		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			add_dynamic_modifier = { modifier = CHL_airforce_modifier }
-		}
-		ELSE_IF = {
 			limit = {
 				original_tag = BRA
 			}
 			add_dynamic_modifier = { modifier = BRA_airforce_modifier }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			add_dynamic_modifier = { modifier = ARG_airforce_modifier }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	add_dynamic_modifier = { modifier = PAR_airforce_modifier }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	add_dynamic_modifier = { modifier = URG_airforce_modifier }
-		# }
 		ELSE = {
 			add_dynamic_modifier = { modifier = south_american_airforce_modifier }
 		}
@@ -2478,8 +1757,8 @@ shared_focus = {
 	cost = 5
 
 	ai_will_do = {
-		factor = 20
-	}
+			factor = 20
+		}
 
 	available = {
 
@@ -2491,49 +1770,18 @@ shared_focus = {
 
 	completion_reward = {
 
+
 		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
-		}
-		ELSE_IF = {
 			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.15 tooltip = air_ace_generation_chance_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.1 tooltip = air_ace_generation_chance_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.15 tooltip = air_ace_generation_chance_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
 		}
 	}
@@ -2623,9 +1871,9 @@ shared_focus = {
 	id = SMB_domestic_designs
 	icon = GFX_focus_SMB_purchase_aircraft
 	relative_position_id = SMB_air_academy
-	mutually_exclusive = { focus = SMB_license_designs focus = SMB_purchase_aircraft }
+	mutually_exclusive = { focus = SMB_license_designs }
 	prerequisite = { focus = SMB_air_academy focus = SMB_construct_air_bases }
-	x = 0
+	x = 1
 	y = 1
 
 	cost = 5
@@ -2646,39 +1894,11 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
 			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
@@ -2692,8 +1912,8 @@ shared_focus = {
 	icon = GFX_focus_generic_copy_plane_designs
 	relative_position_id = SMB_air_force
 	prerequisite = { focus = SMB_air_academy focus = SMB_construct_air_bases }
-	mutually_exclusive = { focus = SMB_domestic_designs focus = SMB_purchase_aircraft }
-	x = 0
+	mutually_exclusive = { focus = SMB_domestic_designs}
+	x = 1
 	y = 2
 
 	cost = 5
@@ -2714,26 +1934,6 @@ shared_focus = {
 
 	completion_reward = {
 
-		IF = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}
-			add_equipment_subsidy = {
-				cic = 5000
-				equipment_type = small_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 5000
-				equipment_type = large_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 5000
-				equipment_type = medium_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-		}
 
 		IF = {
 			limit = {
@@ -2746,72 +1946,16 @@ shared_focus = {
 	}
 }
 
-shared_focus = {
-	id = SMB_purchase_aircraft
-	icon = GFX_focus_SMB_purchase_aircraft
-	relative_position_id = SMB_construct_air_bases
-	prerequisite = { focus = SMB_air_academy focus = SMB_construct_air_bases }
-	mutually_exclusive = { focus = SMB_domestic_designs focus = SMB_license_designs }
-	x = 0
-	y = 1
-
-	cost = 5
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	completion_reward = {
-		IF = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = small_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = large_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-			add_equipment_subsidy = {
-				cic = 10000
-				equipment_type = medium_plane_airframe
-				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
-			}
-		}
-
-		IF = {
-			limit = {
-				NOT = {
-					has_dlc = "Arms Against Tyranny"
-				}
-			}
-			custom_effect_tooltip = SMB_purchase_aircraft_tt
-		}
-		
-	}
-}
 
 shared_focus = {
 	id = SMB_establish_aircraft_industry
 	icon = GFX_focus_generic_aircraft_production
 	relative_position_id = SMB_license_designs
-	prerequisite = { focus = SMB_license_designs focus = SMB_domestic_designs focus = SMB_purchase_aircraft }
-	x = 0
+	prerequisite = { focus = SMB_license_designs focus = SMB_domestic_designs  }
+	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -2877,7 +2021,7 @@ shared_focus = {
 	x = -2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -2894,7 +2038,7 @@ shared_focus = {
 	completion_reward = {
 		add_tech_bonus = {
 			name = JUNO_heavy_airframe_initiative
-			bonus = 0.75
+			bonus = 0.35
 			uses = 2
 			category = heavy_air
 		}
@@ -2910,7 +2054,7 @@ shared_focus = {
 	x = 0
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -2927,7 +2071,7 @@ shared_focus = {
 	completion_reward = {
 		add_tech_bonus = {
 			name = JUNO_medium_airframe_initiative 
-			bonus = 0.75
+			bonus = 0.35
 			uses = 2
 			category = medium_air
 		}
@@ -2943,7 +2087,7 @@ shared_focus = {
 	x = 2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -2960,7 +2104,7 @@ shared_focus = {
 	completion_reward = {
 		add_tech_bonus = {
 			name = JUNO_light_airframe_initiative
-			bonus = 0.75
+			bonus = 0.35
 			uses = 2
 			category = light_air
 		}
@@ -2976,7 +2120,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -2993,48 +2137,17 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.075 tooltip = air_strategic_bomber_bombing_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
-		# }
+
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_strategic_bomber_bombing_factor = 0.075 tooltip = air_strategic_bomber_bombing_factor_tt }
 		}
 	}
 }
@@ -3048,7 +2161,7 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -3065,53 +2178,17 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.075 tooltip = air_cas_present_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.05 tooltip = air_cas_present_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_cas_present_factor = 0.075 tooltip = air_cas_present_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
 		}
 	}
@@ -3126,7 +2203,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -3144,15 +2221,6 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
@@ -3160,38 +2228,11 @@ shared_focus = {
 			add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05 tooltip = air_superiority_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05 tooltip = air_intercept_efficiency_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_superiority_efficiency = 0.05  tooltip = air_superiority_efficiency_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_intercept_efficiency = 0.05  tooltip = air_intercept_efficiency_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05  tooltip = air_agility_factor_tt }
 		}
 	}
 }
@@ -3205,7 +2246,7 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -3222,47 +2263,15 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.075 tooltip = air_range_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.075 tooltip = air_range_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
 		}
 	}
@@ -3276,7 +2285,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -3293,54 +2302,18 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.075 tooltip = air_defence_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.075 tooltip = air_defence_factor_tt }
 		}
 	}
 }
@@ -3353,7 +2326,7 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -3370,15 +2343,6 @@ shared_focus = {
 	completion_reward = {
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
@@ -3386,38 +2350,11 @@ shared_focus = {
 			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_airforce_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-		# 	add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
-		# }
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.05 tooltip = air_range_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_range_factor = 0.1 tooltip = air_range_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_agility_factor = 0.05 tooltip = air_agility_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.05 tooltip = air_defence_factor_tt }
+			add_to_variable = { JUNO_airforce_modifier_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
 		}
 		add_breakthrough_progress = {
 			specialization = specialization_air
@@ -3440,7 +2377,7 @@ shared_focus = {
 	x = 0
 	y = 2
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -3464,19 +2401,97 @@ shared_focus = {
 			uses = 2
 			category = air_doctrine
 		}
-		add_mastery_bonus = {
-			name = SMB_air_doctrine
-			bonus = 0.2
-			days = 360
-			folder = air
+	}
+}
+shared_focus = {
+	id = SMB_experimental_weapons_department
+	icon = GFX_focus_rocketry
+	relative_position_id = SMB_air_doctrine
+	prerequisite = { focus = SMB_air_doctrine }
+	prerequisite = { focus = SMB_air_modifier_boost_1 focus = SMB_air_modifier_boost_2 }
+	x = 0
+	y = 1
+
+	cost = 8
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+			factor = 20
 		}
-		add_mastery = {
-			amount = 25
-			folder = air
+
+	completion_reward = {
+
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.75
 		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = generic_secret_weapons_ns
+
+
 	}
 }
 
+shared_focus = {
+	id = SMB_nuclear_program
+	icon = GFX_focus_wonderweapons
+	relative_position_id = SMB_experimental_weapons_department
+	prerequisite = { focus = SMB_experimental_weapons_department }
+	x = 0
+	y = 1
+
+	cost = 8
+
+	available = {
+	date > 1942.1.1
+	}
+
+	bypass = {
+		
+	}
+
+	ai_will_do = {
+		factor = 20
+	} 
+
+	completion_reward = {
+
+		if = {
+			limit = {
+				NOT = {
+					has_tech = atomic_research
+				}
+			}
+			add_tech_bonus = {
+				name = JUNO_nuclear_initiative
+				ahead_reduction = 0.3
+				bonus = 1
+				uses = 1
+				category = nuclear
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.25
+			}
+		}
+		else = {
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.75
+			}
+		}
+
+	}   
+}  
 shared_focus = {
 	id = SMB_aircraft_carriers
 	icon = GFX_goal_generic_navy_carrier
@@ -3521,228 +2536,6 @@ shared_focus = {
 }
 
 
-shared_focus = {
-	id = SMB_joint_operative_command
-	icon = GFX_focus_generic_combined_arms
-	relative_position_id = SMB_air_defense
-	prerequisite = { focus = SMB_army_academy }
-	prerequisite = { focus = SMB_air_academy }
-	x = 0
-	y = 1
-
-	cost = 10
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-		IF = {
-			limit = { 
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-		# 	add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-		# 	add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		# }
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.05 tooltip = command_power_gain_mult_tt }
-		}
-	}
-}
-
-shared_focus = {
-	id = SMB_war_planning_office
-	icon = GFX_focus_SOV_mobilization_plan
-	relative_position_id = SMB_joint_operative_command
-	prerequisite = { focus = SMB_joint_operative_command }
-	x = -1
-	y = 1
-
-	cost = 10
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-
-		army_experience = 15
-		air_experience = 15
-		navy_experience = 15
-
-		IF = {
-			limit = { 
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-		# 	add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		# }
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.075 tooltip = planning_speed_factor_tt }
-		}
-	}
-}
-
-shared_focus = {
-	id = SMB_women_in_aviation
-	icon = GFX_focus_SOV_women_in_aviation
-	relative_position_id = SMB_joint_operative_command
-	prerequisite = { focus = SMB_joint_operative_command }
-	x = 1
-	y = 1
-
-	cost = 10
-
-	available = {
-		OR = {
-			has_government = democratic
-			has_government = communism
-		}
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-
-		air_experience = 50
-
-		set_rule = {
-			can_generate_female_aces = yes
-		}
-
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-		# 	add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		# }
-		ELSE = {
-			custom_effect_tooltip = JUNO_modify_south_american_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.05 tooltip = conscription_factor_tt }
-		}
-	}
-}
 
 shared_focus = {
 	id = SMB_navy
@@ -3755,34 +2548,11 @@ shared_focus = {
 
 	icon = {
 		trigger = {
-			original_tag = CHL
-		}
-		value = GFX_focus_CHL_armada_de_chile
-	}
-	icon = {
-		trigger = {
-			original_tag = ARG
-		}
-		value = GFX_focus_ARG_navy
-	}
-	icon = {
-		trigger = {
 			original_tag = BRA
 		}
 		value = GFX_focus_BRA_navy
 	}
-	icon = {
-		trigger = {
-			NOT = {
-				OR = {
-					original_tag = CHL
-					original_tag = ARG
-					original_tag = BRA
-				}
-			}
-		}
-		value = GFX_goal_generic_build_navy
-	}
+
 
 	cost = 5
 
@@ -3835,34 +2605,11 @@ shared_focus = {
 
 		IF = {
 			limit = {
-				original_tag = CHL
-			}
-			add_dynamic_modifier = { modifier = CHL_navy_modifier }
-		}
-		ELSE_IF = {
-			limit = {
 				original_tag = BRA
 			}
 			add_dynamic_modifier = { modifier = BRA_navy_modifier }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			add_dynamic_modifier = { modifier = ARG_navy_modifier }
-		}
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = PAR
-		# 	}
-		# 	add_dynamic_modifier = { modifier = PAR_navy_modifier }
-		# }
-		# ELSE_IF = {
-		# 	limit = {
-		# 		original_tag = URG
-		# 	}
-		# 	add_dynamic_modifier = { modifier = URG_navy_modifier }
-		# }
+
 		ELSE = {
 			add_dynamic_modifier = { modifier = south_american_navy_modifier }
 		}
@@ -3878,7 +2625,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost =8
 
 	ai_will_do = {
 		factor = 20
@@ -3940,7 +2687,7 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 		factor = 20
@@ -4084,59 +2831,10 @@ shared_focus = {
 
 	}
 
-	bypass = {
-		NOT = {
-			has_idea = SMB_MTG_naval_arms_race_legacy
-		}
-		always = no
-		# OR = {
-		# 	original_tag = URG
-		# 	original_tag = PAR
-		# }
-	}
+
 
 	completion_reward = {
 		remove_ideas = SMB_MTG_naval_arms_race_legacy
-		# every_other_country = {
-		# 	limit = {
-		# 		OR = {
-		# 			is_major = yes
-		# 			capital_scope = {
-		# 				is_core_of = THIS
-		# 				is_on_continent = south_america
-		# 			}
-		# 		}
-		# 		NOT = { 
-		# 			has_idea = SMB_MTG_naval_arms_race_legacy
-		# 		}
-		# 	}
-		# 	news_event = {
-		# 		id = south_american_news.10
-		# 		hours = 2
-		# 	} 
-		# 	IF = {
-		# 		limit = {
-		# 			original_tag = USA
-		# 		}
-		# 		add_opinion_modifier = {
-		# 			modifier = SMB_naval_arms_race
-		# 			target = ROOT
-		# 		}
-		# 	} 
-		# } 
-		# every_other_country = {
-		# 	limit = {
-		# 		has_idea = SMB_MTG_naval_arms_race_legacy
-		# 	}
-		# 	country_event = {
-		# 		id = south_american_events.10
-		# 		hours = 1
-		# 	}
-		# 	add_opinion_modifier = {
-		# 		modifier = SMB_naval_arms_race
-		# 		target = ROOT
-		# 	}
-		# }
 	}
 }
 
@@ -4150,7 +2848,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 10
@@ -4167,7 +2865,7 @@ shared_focus = {
 	completion_reward = {
 		add_tech_bonus = {
 			name = tooltip_capital_ships
-			bonus = 1.0
+			bonus = 0.4
 			uses = 2
 			category = ca_tech
 			category = bb_tech
@@ -4184,7 +2882,7 @@ shared_focus = {
 	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 		factor = 20
@@ -4208,7 +2906,7 @@ shared_focus = {
 		set_technology = { coastal_defense_ships = 1 }
 		add_tech_bonus = {
 			name = SMB_coastal_fleet
-			bonus = 1.0
+			bonus = 0.4
 			uses = 2
 			category = ca_tech
 			category = dd_tech
@@ -4278,10 +2976,6 @@ shared_focus = {
 		}
 	}
 
-	allow_branch = { 
-		#has_dlc = "Man the Guns"
-		always = no
-	}
 
 	completion_reward = {
 		add_tech_bonus = {
@@ -4311,11 +3005,11 @@ shared_focus = {
 	x = -2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
-		factor = 20
-	}
+			factor = 20
+		}
 
 	available = {
 
@@ -4333,18 +3027,18 @@ shared_focus = {
 			limit = {
 				has_doctrine = new_convoy_raiding
 			}
-			add_mastery_bonus = {
-				name = SMB_escort_fleet
-				bonus = 0.2
-				days = 360
-				grand_doctrine = new_convoy_raiding
-			}
-			add_mastery_bonus = {
-				name = SMB_escort_fleet
-				bonus = 0.2
-				days = 360
-				track = screens
-			}
+				add_mastery_bonus = {
+					name = SMB_escort_fleet
+					bonus = 0.2
+					days = 180
+					grand_doctrine = new_convoy_raiding
+				}
+				add_mastery_bonus = {
+					name = SMB_escort_fleet
+					bonus = 0.1
+					days = 180
+					track = screens
+				}
 		}
 		else = {
 			add_mastery_bonus = {
@@ -4373,7 +3067,7 @@ shared_focus = {
 	x = 2
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 
@@ -4384,8 +3078,8 @@ shared_focus = {
 	}
 
 	ai_will_do = {
-		factor = 10
-	}
+			factor = 10
+		}
 
 	completion_reward = {
 		navy_experience = 15
@@ -4396,13 +3090,13 @@ shared_focus = {
 				add_mastery_bonus = {
 					name = SMB_raiding_fleet
 					bonus = 0.2
-					days = 360
+					days = 180
 					grand_doctrine = new_convoy_raiding
 				}
 				add_mastery_bonus = {
 					name = SMB_raiding_fleet
 					bonus = 0.1
-					days = 360
+					days = 180
 					track = submarines
 				}
 		}
@@ -4424,48 +3118,33 @@ shared_focus = {
 	}
 }
 
-# shared_focus = {
-# 	id = SMB_degaussing
-# 	icon = GFX_goal_generic_navy_anti_submarine
-# 	prerequisite = {focus = SMB_escort_fleet }
-# 	relative_position_id = SMB_escort_fleet
-# 	x = -1
-# 	y = 1
+shared_focus = {
+	id = SMB_degaussing
+	icon = GFX_goal_generic_navy_anti_submarine
+	prerequisite = {focus = SMB_escort_fleet }
+	relative_position_id = SMB_escort_fleet
+	x = -1
+	y = 1
 
-# 	cost = 10
+	cost = 8
 
-# 	available = {
+	available = {
 
-# 	}
+	}
 
-# 	bypass = {
+	bypass = {
 		
-# 	}
+	}
 
-# 	ai_will_do = {
-# 			factor = 20
-# 		}
+	ai_will_do = {
+			factor = 20
+		}
 
-# 	completion_reward = {
-# 		add_ideas = CAN_degauss_ship_hulls
-# 		if = {
-# 			limit = {
-# 				has_dlc = "Man the Guns"
-# 			}
-# 			if = {
-# 				limit = {
-# 					has_tech = degaussing
-# 				}
-# 				navy_experience = 20
-# 			}
-# 			else = {
-# 				set_technology = {
-# 				    degaussing = 1
-# 				}
-# 			}
-# 		}
-# 	}	
-# }
+	completion_reward = {
+			add_ideas = CAN_degauss_ship_hulls
+
+	}	
+}
 
 shared_focus = {
 	id = SMB_naval_invasion
@@ -4492,7 +3171,7 @@ shared_focus = {
 	completion_reward = {
 		JUNO_pick_navy_modifier_tt = yes
 		add_to_variable = { 
-			JUNO_navy_naval_invasion_capacity = 5 
+			JUNO_navy_naval_invasion_capacity = 10 
 			tooltip = naval_invasion_capacity_tt
 		}
 	}
@@ -4507,7 +3186,7 @@ shared_focus = {
 	x = -1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	ai_will_do = {
 			factor = 20
@@ -4529,15 +3208,20 @@ shared_focus = {
 			category = ss_tech
 		}
 
-		# if = {
-		# 	limit = {
-		# 		has_dlc = "Man the Guns"
-		# 	}
-		# 	set_technology = { cruiser_submarines = 1 }
-		# }
-		# else = {
-			navy_experience = 50
-		# }
+		add_breakthrough_progress = {
+			specialization = specialization_naval
+			value = 0.25
+		}
+
+		IF = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			add_ideas = cruiser_submarine_specialization_mtg
+		}
+		ELSE = {
+			add_ideas = cruiser_submarine_specialization
+		}
 	}
 }
 
@@ -4624,7 +3308,7 @@ shared_focus = {
 			tooltip = refit_speed_tt
 		}
 		add_to_variable = {
-			ROOT.JUNO_navy_repair_speed_factor = 0.15
+			ROOT.JUNO_navy_repair_speed_factor = 0.25
 			tooltip = repair_speed_factor_tt
 		}
 	}
@@ -4638,10 +3322,10 @@ shared_focus = {
 	}
 	prerequisite = {focus = SMB_expand_repair_yards  }
 	relative_position_id = SMB_expand_repair_yards
-	x = 0
+	x = 1
 	y = 1
 
-	cost = 10
+	cost = 8
 
 	available = {
 		has_tech = early_ship_hull_carrier
@@ -4741,11 +3425,10 @@ shared_focus = {
 	prerequisite = { focus = SMB_expand_repair_yards }
 	prerequisite = { focus = SMB_reescalate_the_naval_arms_race }
 	relative_position_id = SMB_expand_repair_yards
-	mutually_exclusive = { focus = SMB_merchant_marine }
 	x = -1
 	y = 2
 
-	cost = 10
+	cost = 6
 
 	available = {
 
@@ -4798,119 +3481,6 @@ shared_focus = {
 	}
 }
 
-shared_focus = {
-	id = SMB_merchant_marine
-	icon = GFX_focus_generic_merchant_fleet
-	prerequisite = { focus = SMB_expand_repair_yards }
-	relative_position_id = SMB_expand_repair_yards
-	mutually_exclusive = { focus = SMB_enlarge_naval_facilities }
-	x = 1
-	y = 2
-
-	cost = 5
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 10
-		}
-
-	completion_reward = {
-		add_ideas = POR_convoy_build_efficiency
-	}
-}
-
-shared_focus = {
-	id = SMB_fortification_effort
-	icon = GFX_focus_FIN_coastal_defense
-	prerequisite = { focus = SMB_air_force }
-	prerequisite = { focus = SMB_navy }
-	relative_position_id = SMB_air_force
-	x = 4
-	y = 1
-
-	cost = 5
-
-	available = {
-
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-		JUNO_pick_navy_modifier_tt = yes
-		add_to_variable = {
-			JUNO_modifier_production_speed_coastal_bunker_factor = 0.1
-			tooltip = production_speed_coastal_bunker_factor_tt
-		}
-		IF = {
-			limit = {
-				original_tag = BRA
-				any_owned_state = {
-					is_coastal = yes
-				}
-			}
-			500 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 5172
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 10980
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 8190
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 12996
-				}
-			}
-			498 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 10933
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 2175
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 13273
-				}
-			}
-		}
-	}
-}
 
 shared_focus = {  
 	id = SMB_jungle_warfare_training
@@ -4918,13 +3488,9 @@ shared_focus = {
 	relative_position_id = SMB_regular_infantry 
 	prerequisite = { focus = SMB_regular_infantry }  
 	x = 2
-	y = 2
+	y = 1
 
-	cost = 10
-
-	allow_branch = { 
-		original_tag = BRA
-	}
+	cost = 8
 
 	available = {
 		495 = {
@@ -4962,88 +3528,20 @@ shared_focus = {
 			add_trait = { trait = jungle_rat }
 		}
 		
-		# custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-		# add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.02 tooltip = experience_gain_army_factor_tt }
-		# add_to_variable = { JUNO_army_modifier_army_org_factor = 0.02 tooltip = army_org_factor_tt }
-	}
-}
-
-shared_focus = {  
-	id = SMB_jungle_pioneers
-	icon = GFX_goal_generic_construction2
-	relative_position_id = SMB_jungle_warfare_training 
-	prerequisite = { focus = SMB_jungle_warfare_training }  
-	x = 1
-	y = 1
-
-	cost = 10
-
-	allow_branch = { tag = BRA }
-
-	available = {
+		custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
+		add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.02 tooltip = experience_gain_army_factor_tt }
+		add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
 		
-	}
 
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-		add_tech_bonus = {
-			name = JUNO_support_company_initiative
-			bonus = 0.25
-			uses = 1
-			category = support_tech
-		}
-		hidden_effect = {
-			set_technology = { 
-				TOA_jungle_pioneers_support_tech = 1 
-				popup = no
-			}
-		}
-		custom_effect_tooltip = SMB_jungle_pioneers_tt
-	}
-}
-
-shared_focus = {  
-	id = SMB_brown_water_navy
-	icon = GFX_focus_generic_merchant_fleet
-	relative_position_id = SMB_jungle_warfare_training 
-	prerequisite = { focus = SMB_jungle_warfare_training }  
-	x = -1
-	y = 1
-
-	cost = 10
-
-	allow_branch = { tag = BRA }
-
-	available = {
-		
-	}
-
-	bypass = {
-		
-	}
-
-	ai_will_do = {
-			factor = 20
-		}
-
-	completion_reward = {
-		#custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-		#add_to_variable = { JUNO_army_heat_attrition_factor = -0.1 tooltip = heat_attrition_factor_tt }
-		#add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.05 tooltip = supply_combat_penalties_on_core_factor_tt }
 		hidden_effect = { 
 			set_technology = { 
 				ToA_river_boats_tech = 1	
 				popup = no
 			} 
 		}
-		#show_ideas_tooltip = BRA_brown_water_navy_idea
 		add_ideas = BRA_brown_water_navy_idea
 	}
 }
+
+
+

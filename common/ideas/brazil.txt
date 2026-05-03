@@ -344,7 +344,7 @@ ideas = {
 			}
 
 			modifier = {
-				#join_faction_tension = -0.5
+				join_faction_tension = -0.5
 				send_volunteers_tension = -0.5
 				send_volunteer_size = 3
 				air_volunteer_cap = 2
@@ -910,9 +910,9 @@ ideas = {
 			}
 			allowed_civil_war = { always = yes }
 			modifier = {
-				consumer_goods_factor = 0.06
+				production_factory_start_efficiency_factor = 0.075
 				line_change_production_efficiency_factor = 0.1
-				war_stability_factor = 0.15
+				war_stability_factor = 0.1
 			}
 		}
 
@@ -950,27 +950,6 @@ ideas = {
 		designer = yes
 
 
-		BRA_fiat_company = {
-			picture = fiat
-			
-			allowed = {
-				has_dlc = "Trial of Allegiance"
-				original_tag = BRA
-			}
-
-			available = {
-				has_completed_focus = BRA_italian_trucks
-			}
-			research_bonus = {
-				motorized_equipment = 0.15
-				armor = 0.15
-			}
-			
-			traits = { fast_tank_manufacturer }
-			
-			modifier = {
-			}
-		}
 
 	 	BRA_bernadini_manufacturer = {
 		 	picture =  BRA_bernardini

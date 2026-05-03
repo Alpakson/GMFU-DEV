@@ -6,12 +6,6 @@ characters={
 				large=GFX_portrait_BRA_getulio_vargas # Can become Fascism leader later (via Portugal FT)
 			}
 		}
-		# Vanilla - Needs DLC checks
-		#country_leader={
-		#	ideology=despotism
-		#	expire="1965.1.1.1"
-		#	id=-1
-		#}
 		country_leader = {
 			ideology = populism
 			expire = "1965.1.1"
@@ -200,10 +194,7 @@ characters={
 						limit = {
 							original_tag = BRA
 						}
-						OR = { 
 							has_completed_focus = BRA_posts_for_generals 
-							has_completed_focus = BRA_issue_lordships
-						}
 					}
 					is_country_leader = no
 				}
@@ -449,28 +440,28 @@ characters={
 
 	### NAVY CHIEFS ###
 #
-	#BRA_aristides_guilhem={
-	#	name=BRA_aristides_guilhem
-	#	portraits={
-	#		army={
-	#			small="GFX_idea_generic_navy_south_america_2"
-	#		}
-	#	}
-	#	advisor={		
-	#		slot = navy_chief
-	#		idea_token = BRA_aristides_guilhem
-	#		allowed = {
-	#			original_tag = BRA
-	#		}
-	#		traits = {
-	#			navy_chief_naval_aviation_2
-	#		}
-	#		cost = 100
-	#		ai_will_do = {
-	#			factor = 1.000
-	#		}
-	#	}
-	#}
+	BRA_aristides_guilhem={
+		name=BRA_aristides_guilhem
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_2"
+			}
+		}
+		advisor={		
+			slot = navy_chief
+			idea_token = BRA_aristides_guilhem
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_chief_naval_aviation_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 
 	BRA_jorge_martins={
 		name=BRA_jorge_martins
@@ -909,9 +900,6 @@ characters={
 				original_tag  = BRA
 			}
 			available  = {
-				#NOT = {
-				#	has_completed_focus = BRA_romanticize_the_old_empire
-				#}
 			}
 			traits  = {
 				BRA_modernist_architect 
@@ -1160,17 +1148,10 @@ characters={
 				has_dlc = "Trial of Allegiance"
 			}
 			available  = {
-				#has_government = communism
+				NOT = { has_completed_focus = BRA_tribunal_de_seguranca_nacional}
 			}
 			traits  = {
 				ICE_trade_unionist
-			}
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 10
-					has_completed_focus	= BRA_prepare_for_second_intentona
-				}
 			}
 		}		
 	}
@@ -1200,7 +1181,8 @@ characters={
 		}	
 		corps_commander={
 			visible = {
-				has_completed_focus = BRA_equality_for_women
+                always = no
+				#has_completed_focus = BRA_equality_for_women
 			}
 			traits={}
 			skill=2
@@ -1364,7 +1346,6 @@ characters={
 			logistics_skill=1
 			visible = {
 				has_completed_focus = BRA_anaue
-				has_government = fascism
 			}
 		}
 	}
@@ -1388,7 +1369,7 @@ characters={
 				has_dlc = "Trial of Allegiance"
 			}
 			available  = {
-				NOT = { has_government = communism }
+				has_completed_focus =  BRA_work_with_the_integralists
 			}
 			traits  = {
 				DEN_fascist_militarist
@@ -1449,17 +1430,10 @@ characters={
 				has_dlc = "Trial of Allegiance"
 			}
 			available  = {
-				NOT = { has_government = communism }
+				has_completed_focus =  BRA_work_with_the_integralists
 			}
 			traits  = {
 				BRA_controversial_academic
-			}
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 10
-					has_completed_focus	= BRA_romanticize_the_old_empire
-				}
 			}
 		}		
 	}
@@ -1483,12 +1457,7 @@ characters={
 				has_dlc = "Trial of Allegiance"
 			}
 			available  = {
-				IF = {
-					limit = {
-						original_tag = BRA
-					}
-					has_completed_focus = BRA_promote_agriculture
-				}
+				always = no
 			}
 			traits  = {
 				BRA_coffee_king
@@ -1640,12 +1609,10 @@ characters={
 	}
 
 	BRA_floriano_de_lima_brayner = {
-		name=BRA_capy_bara
-		#name=BRA_floriano_de_lima_brayner
+		name=BRA_floriano_de_lima_brayner
 		portraits={
 			army={
-				large="GFX_portrait_capy_bara"
-				#large=GFX_portrait_BRA_floriano_de_lima_brayner
+				large=GFX_portrait_BRA_floriano_de_lima_brayner
 				small=GFX_portrait_BRA_floriano_de_lima_brayner_small
 			}
 		}
@@ -1792,7 +1759,6 @@ characters={
 			legacy_id=-1
 			visible = {
 				has_completed_focus = BRA_sway_the_cangaco
-				has_government = communism
 			}
 
 		}
