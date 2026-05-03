@@ -3704,7 +3704,11 @@ country_event = {
 			factor = 80
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.2 }
-		FRA_transfer_indochina_effect = yes
+		transfer_state = 671
+		transfer_state = 670
+		transfer_state = 286
+		transfer_state = 741
+		transfer_state = 1017
 	}
 }
 
@@ -3735,7 +3739,11 @@ country_event = {
 			factor = 80
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.1 }
-		FRA_transfer_syria_effect = yes
+		#FRA_transfer_syria_effect = yes
+		transfer_state = 677
+		transfer_state = 680
+		transfer_state = 554
+		transfer_state = 553
 	}
 }
 
@@ -3766,7 +3774,11 @@ country_event = {
 			factor = 80
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.3 }
-		FRA_transfer_central_africa_effect = yes
+		transfer_state = 772
+		transfer_state = 539
+		transfer_state = 773
+		transfer_state = 660
+		transfer_state = 774
 	}
 }
 # western africa remains with Vichy France
@@ -3796,7 +3808,17 @@ country_event = {
 			factor = 80
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.4 }
-		FRA_transfer_western_africa_effect = yes
+		transfer_state = 557 
+		transfer_state = 272 
+		transfer_state = 556 
+		transfer_state = 780 
+		transfer_state = 779 
+		transfer_state = 778 
+		transfer_state = 781 
+		transfer_state = 776 
+		transfer_state = 898 
+		transfer_state = 899 
+		transfer_state = 777 
 		set_capital =  { state = 539 }
 	}
 }
@@ -3873,7 +3895,14 @@ country_event = {
 			factor = 80
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.5 }
-		FRA_transfer_north_africa_effect = yes
+		#FRA_transfer_north_africa_effect = yes
+		transfer_state = 461
+		transfer_state = 462
+		transfer_state = 459
+		transfer_state = 513
+		transfer_state = 460
+		transfer_state = 458
+		transfer_state = 665
 	}
 }
 
