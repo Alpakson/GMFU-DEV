@@ -51,7 +51,7 @@ characters={
 		name="SAF_lion_king"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_europe_1"
+				small="GFX_idea_SWE_the_lion_of_the_north"
 			}
 		}
 	}

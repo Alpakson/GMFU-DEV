@@ -186,7 +186,7 @@ ideas = {
 
 		}
 
-		SAF_cheap_labor_1 = {
+		SAF_effective_labor_1 = {
 			allowed = {
 				always = no
 			}
@@ -200,14 +200,14 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.03
+				industrial_capacity_dockyard = 0.03
 				conscription_factor = 0.05
 			}
 
 		}
 
-		SAF_cheap_labor_2 = {
+		SAF_effective_labor_2 = {
 			allowed = {
 				always = no
 			}
@@ -221,15 +221,15 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.06
+				industrial_capacity_dockyard = 0.06
 				consumer_goods_factor = -0.05
 				conscription_factor = 0.10
 			}
 
 		}
 
-		SAF_cheap_labor_3 = {
+		SAF_effective_labor_3 = {
 			allowed = {
 				always = no
 			}
@@ -243,8 +243,8 @@ ideas = {
 			picture = generic_manpower_bonus
 
 			modifier = {
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.09
+				industrial_capacity_dockyard = 0.09
 				consumer_goods_factor = -0.1
 				conscription_factor = 0.15
 			}
@@ -356,8 +356,8 @@ ideas = {
 			picture = generic_army_bonus
 
 			modifier = {
-				army_core_defence_factor = 0.15
-				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.075
+				army_core_attack_factor = 0.075
 			}
 		}
 
@@ -375,8 +375,8 @@ ideas = {
 			picture = generic_special_forces_bonus
 
 			modifier = {
-				special_forces_attack_factor = 0.1
-				special_forces_defence_factor = 0.1
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
 			}
 		}
 
@@ -518,7 +518,7 @@ ideas = {
 			}
 		}
 
-		SAF_exiled {
+		SAF_exiled = {
 			allowed = {
 				always = no
 			}
@@ -537,7 +537,7 @@ ideas = {
 			}
 		}
 
-		SAF_exiled_2 {
+		SAF_exiled_2 = {
 			allowed = {
 				always = no
 			}
@@ -556,7 +556,7 @@ ideas = {
 			}
 		}
 
-		SAF_payback {
+		SAF_payback = {
 			allowed = {
 				always = no
 			}

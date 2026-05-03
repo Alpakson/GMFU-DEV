@@ -266,8 +266,8 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = SAF_cheap_labor_2
-				add_idea = SAF_cheap_labor_3
+				remove_idea = SAF_effective_labor_2
+				add_idea = SAF_effective_labor_3
 			}
 		}
 	}
@@ -523,7 +523,7 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = SAF_cheap_labor_1
+			add_ideas = SAF_effective_labor_1
 		}
 	}
 
@@ -556,8 +556,8 @@
 
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = SAF_cheap_labor_1
-				add_idea = SAF_cheap_labor_2
+				remove_idea = SAF_effective_labor_1
+				add_idea = SAF_effective_labor_2
 			}
 		}
 	}
@@ -1103,7 +1103,7 @@
 		y = 6
 		relative_position_id = SAF_RWK_south_african_railways
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1188,7 +1188,7 @@
 
 	focus = {
 		id = SAF_RWK_special_service_battalion
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_focus_IRQ_royal_iraqi_army_alt
 		x = 20
 		y = 0
 
@@ -1547,8 +1547,8 @@
 	}
 
 	focus = {
-		id = SAF_RWK_rocket_artillery_research
-		icon = GFX_focus_SWE_let_fly_all_guns
+		id = SAF_RWK_desert_bonus
+		icon = GFX_focus_generic_desert_training
 		prerequisite = { focus = SAF_RWK_motorized_infantry_workshops }
 		x = 0
 		y = 1
@@ -1573,12 +1573,10 @@
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_tech_bonus = {
-				name = SAF_rocket_artillery_research
-				bonus = 1.0
-				uses = 1
-				category = rocketry
+		completion_reward = {	
+			custom_effect_tooltip = SAF_RWK_desert_adaptable_armored_car_designs
+			hidden_effect = {
+				set_technology = { desert_adaptable_armored_car_designs = 1 }
 			}
 		}
 	}
@@ -1666,7 +1664,7 @@
 
 	focus = {
 		id = SAF_RWK_mk_3_recon_car
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_generic_armored_air_support
 		prerequisite = { focus = SAF_RWK_weaponizing_the_desert_jackal }
 		x = 0
 		y = 1
@@ -1882,7 +1880,7 @@
 
 	focus = {
 		id = SAF_RWK_anti_tank_guns
-		icon = GFX_goal_generic_army_artillery
+		icon = GFX_focus_generic_anti_tank_guns
 		prerequisite = { focus = SAF_RWK_king_of_the_desert }
 		prerequisite = { focus = SAF_RWK_queen_of_the_desert }
 		x = 1
@@ -1921,7 +1919,7 @@
 
 	focus = {
 		id = SAF_RWK_mechanization_effort
-		icon = GFX_goal_generic_build_tank
+		icon = GFX_focus_generic_mechanized
 		prerequisite = { focus = SAF_RWK_anti_tank_guns }
 		x = 0
 		y = 1
@@ -1962,7 +1960,7 @@
 #	focus = {
 #		id = SAF_officer_train
 #		icon = GFX_goal_generic_army_officers
-#		prerequisite = { focus = SAF_RWK_mechanization_effort focus = SAF_RWK_mk_3_recon_car focus = SAF_RWK_rocket_artillery_research focus = SAF_RWK_artillery_effort focus = SAF_RWK_heavy_AT_bonus focus = SAF_RWK_equipment_effort }
+#		prerequisite = { focus = SAF_RWK_mechanization_effort focus = SAF_RWK_mk_3_recon_car focus = SAF_RWK_desert_bonus focus = SAF_RWK_artillery_effort focus = SAF_RWK_heavy_AT_bonus focus = SAF_RWK_equipment_effort }
 #		x = -4
 #		y = 1.5
 #
@@ -2756,6 +2754,64 @@
     	}
 	}
 
+	#SABOTAGE (LOCAL REsOURCES REDUCITON##################)
+
+	focus = {
+		id = SAF_RWK_sabotage_the_occupiers
+		icon = GFX_focus_generic_sabotage
+		prerequisite = { focus = SAF_RWK_capitulated }
+		x = -2
+		y = 1
+		relative_position_id = SAF_RWK_capitulated
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		
+		available = {
+     	   has_capitulated = yes
+    	}
+
+		cost = 5
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = SAF
+					OR = {
+						is_controlled_by = D04
+						is_controlled_by = GER
+						is_controlled_by = ITA
+					}				
+				}
+				damage_building = {
+					type = infrastructure 
+					damage = 3
+				}
+				# They do this one in Vanilla but it doesn't work for some reason ZZZ
+				 damage_building = {
+				 	type = rail_way
+				 	damage = 0.3
+				 }
+				damage_building = {
+					type = air_base
+					damage = 1
+				}
+				damage_building = {
+					type = anti_air_building
+					damage = 1
+				}
+				damage_building = {
+					type = radar_station
+					damage = 1
+				}
+				damage_building = {
+					type = coastal_bunker
+					damage = 2
+				}
+			}
+		}
+	}
+
+
 	#OFFMAPSS
 
 	focus = {
@@ -2767,7 +2823,9 @@
 		relative_position_id = SAF_RWK_capitulated
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost =7
 
 		completion_reward = {
@@ -2784,7 +2842,9 @@
 		relative_position_id = SAF_RWK_rebuilding_the_civillian_industry
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost =7
 
 		completion_reward = {
@@ -2801,7 +2861,9 @@
 		relative_position_id = SAF_RWK_rebuilding_the_civillian_industry_2
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost =7
 
 		completion_reward = {
@@ -2818,7 +2880,9 @@
 		relative_position_id = SAF_RWK_rebuilding_the_military_industry
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost =7
 
 		completion_reward = {
@@ -2837,7 +2901,9 @@
 		relative_position_id = SAF_RWK_capitulated
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost = 5
 
 		completion_reward = {
@@ -2855,7 +2921,9 @@
 		x = 0
 		y = 1
 		relative_position_id = SAF_RWK_reorganizing_the_army
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		cost = 5
 		
 		ai_will_do = {
@@ -2880,7 +2948,9 @@
 		ai_will_do = {
 			factor = 1
 		}	
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		completion_reward = {
             add_doctrine_cost_reduction = {
                 cost_reduction = 0.25
@@ -2905,7 +2975,9 @@
 		ai_will_do = {
 			factor = 1
 		}	
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		completion_reward = {
 			add_ideas = SAF_sf_stats
 	}}
@@ -2922,7 +2994,10 @@
 		relative_position_id = SAF_RWK_special_forces
 		ai_will_do = {
 			factor = 1
-		}	
+		}
+		available = {
+     	   has_capitulated = yes
+    	}	
 		completion_reward = {
 			add_tech_bonus = {
 				name = mar_bonus
@@ -2947,6 +3022,9 @@
 		ai_will_do = {
 			factor = 1
 		}	
+		available = {
+     	   has_capitulated = yes
+    	}
 		completion_reward = {
 			add_tech_bonus = {
 				name = SAF_fallschirmjager
@@ -2978,7 +3056,9 @@
 		ai_will_do = {
 			factor = 1
 		}	
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		completion_reward = {
 			add_political_power = 150
 			add_ideas = SAF_retaking_homeland
@@ -3008,6 +3088,7 @@
 					is_in_faction_with = ROOT
 				}
 			}
+			
 		}
 
 		bypass = {
@@ -3021,6 +3102,23 @@
 
 		completion_reward = {
 			720 = { 
+				set_building_level = {
+					type = coastal_bunker
+					level = 4
+					instant_build = yes
+				}
+				set_building_level = {
+					type = anti_air_building
+					level = 5
+					province = 4060
+					instant_build = yes
+				}
+				set_building_level = {
+					type = air_base
+					level = 2
+					province = 4060
+					instant_build = yes
+				}
 				transfer_state_to = SAF 
 				add_core_of = SAF	
 				hidden_effect = {
@@ -3045,7 +3143,9 @@
 		ai_will_do = {
 			factor = 1
 		}	
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -3069,7 +3169,9 @@
 		relative_position_id = SAF_RWK_help_from_allies
 		
 		cost = 5
-		
+		available = {
+     	   has_capitulated = yes
+    	}
 		ai_will_do = {
 			factor = 1
 		}	
